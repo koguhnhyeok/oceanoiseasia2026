@@ -116,18 +116,18 @@ header .meta .meta-link:hover { text-decoration-color: rgba(255,255,255,.85); }
   font-size: .76rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.78);
+  color: rgba(255,255,255,.7);
   text-decoration: none;
   white-space: nowrap;
-  transition: color .15s ease, background-color .15s ease;
+  transition: color .15s ease;
 }
-.site-nav a:hover {
-  color: #fff;
-  background: rgba(255,255,255,.06);
-}
+.site-nav a:hover { color: #fff; }
 .site-nav a[aria-current="page"] {
-  color: var(--ink);
-  background: var(--accent);
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
 }
 .site-nav .disabled {
   cursor: default;
