@@ -105,30 +105,29 @@ header .meta .meta-link:hover { text-decoration-color: rgba(255,255,255,.85); }
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0 26px;
-  padding-top: 4px;
+  gap: 0 8px;
+  padding-top: 6px;
   padding-bottom: 6px;
 }
 .site-nav a,
 .site-nav span {
   display: inline-block;
-  padding: 3px 0;
+  padding: 4px 10px;
   font-size: .76rem;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: rgba(255,255,255,.78);
   text-decoration: none;
   white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  transition: color .15s ease, border-color .15s ease;
+  transition: color .15s ease, background-color .15s ease;
 }
 .site-nav a:hover {
   color: #fff;
-  border-bottom-color: rgba(255,255,255,.55);
+  background: rgba(255,255,255,.06);
 }
 .site-nav a[aria-current="page"] {
-  color: #fff;
-  border-bottom-color: var(--accent);
+  color: var(--ink);
+  background: var(--accent);
 }
 .site-nav .disabled {
   cursor: default;
@@ -598,9 +597,9 @@ footer a:hover { text-decoration: underline; }
     flex-wrap: nowrap;
     overflow-x: auto;
     justify-content: flex-start;
-    padding-top: 4px;
+    padding-top: 5px;
     padding-bottom: 5px;
-    gap: 0 20px;
+    gap: 0 4px;
     scrollbar-width: thin;
     -webkit-overflow-scrolling: touch;
   }
