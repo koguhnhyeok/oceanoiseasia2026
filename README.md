@@ -20,19 +20,19 @@ This repository hosts the official preview website for Oceanoise Asia 2026.
 ## Pages
 
 - **Home** — `index.html` (welcome message, themes, committees, important dates)
-- **Abstract Submission** — `abstract-submission.html` (call for abstracts, formatting guidelines, downloadable template)
+- **Call for Papers** — `call-for-papers.html` (formatting guidelines, downloadable template, submitter's declaration)
 - Venue / Registration / Contact — coming soon
 
 ## Submission
 
-Abstracts are submitted by email to **oceanoiseasia2026@gmail.com** using the official Word template available on the Abstract Submission page.
+Abstracts are submitted by email to **oceanoiseasia2026@gmail.com** using the official Word template available on the Call for Papers page.
 
 ## Project Structure
 
 ```
 .
 ├── index.html                    # Home page
-├── abstract-submission.html      # Call for Abstracts + formatting guidelines
+├── call-for-papers.html          # Call for Papers + formatting guidelines
 ├── poster.jpg                    # Call for Papers poster
 ├── assets/
 │   ├── css/
