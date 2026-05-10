@@ -17,12 +17,31 @@ This repository hosts the official preview website for Oceanoise Asia 2026.
 | Online Registration | August 11 – September 30, 2026 |
 | Conference Dates | October 11 – 13, 2026 |
 
+## Pages
+
+- **Home** — `index.html` (welcome message, themes, committees, important dates)
+- **Abstract Submission** — `abstract-submission.html` (call for abstracts, formatting guidelines, downloadable template)
+- Venue / Registration / Contact — coming soon
+
+## Submission
+
+Abstracts are submitted by email to **oceanoiseasia2026@gmail.com** using the official Word template available on the Abstract Submission page.
+
 ## Project Structure
 
 ```
 .
-├── index.html      # Main page (preview)
-├── poster.jpg      # Call for Papers poster
+├── index.html                    # Home page
+├── abstract-submission.html      # Call for Abstracts + formatting guidelines
+├── poster.jpg                    # Call for Papers poster
+├── assets/
+│   ├── css/
+│   │   └── site.css              # Shared styles
+│   └── downloads/
+│       ├── Abstract_Template.docx
+│       ├── Abstract_Submission_Guidelines.docx
+│       └── Oceanoise_Asia_2026_Invitation.pdf
+├── CNAME
 └── README.md
 ```
 
@@ -41,4 +60,6 @@ Static site deployed via GitHub Pages.
 
 ## Contact
 
-(TBA)
+- General inquiries / abstract submission: **oceanoiseasia2026@gmail.com**
+- Conference Chair: Dong-Guk Paeng (Jeju National University)
+- General Secretary: Changsoo Kim (Jeju National University)

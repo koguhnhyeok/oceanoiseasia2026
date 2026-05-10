@@ -4,287 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oceanoise Asia 2026</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --ink:       #0a2240;
-      --text:      #1e2d3d;
-      --muted:     #6b8ca4;
-      --line:      #dde7ef;
-      --surface:   #ffffff;
-    }
-
-    html, body { min-height: 100%; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, #a8caE0 0%, transparent 60%),
-        radial-gradient(ellipse 70% 50% at 50% 100%, #c4dceb 0%, transparent 55%),
-        linear-gradient(180deg, #bfd9e8 0%, #d6e6f0 25%, #e3eef5 55%, #ecf3f8 100%);
-      background-attachment: fixed;
-    }
-
-    a { color: inherit; }
-
-    .wrap { width: 100%; margin: 0; padding: 0 56px; }
-
-    /* ── Header ── */
-    header {
-      position: relative;
-      padding: 80px 0 96px;
-      text-align: center;
-      color: #fff;
-      background:
-        radial-gradient(ellipse at 50% 0%, #1a8ab5 0%, transparent 60%),
-        linear-gradient(180deg, #0a2240 0%, #0e4d7b 55%, #126a98 100%);
-      overflow: hidden;
-    }
-    header::after {
-      content: '';
-      position: absolute;
-      left: 0; right: 0; bottom: -1px;
-      height: 70px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 70' preserveAspectRatio='none'%3E%3Cpath fill='%23eaf3f9' d='M0,40 C240,75 480,5 720,30 C960,55 1200,15 1440,35 L1440,70 L0,70 Z'/%3E%3C/svg%3E") no-repeat bottom/100% 100%;
-    }
-    header .eyebrow {
-      display: inline-block;
-      padding: 5px 16px;
-      border: 1px solid rgba(255,255,255,.35);
-      border-radius: 30px;
-      font-size: .7rem;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.9);
-      margin-bottom: 22px;
-    }
-    header h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 800;
-      letter-spacing: -.015em;
-      line-height: 1.1;
-      margin-bottom: 14px;
-    }
-    header h1 .year { color: #5fcae8; }
-    header .subtitle {
-      font-size: clamp(.95rem, 1.6vw, 1.1rem);
-      color: rgba(255,255,255,.82);
-      margin-bottom: 22px;
-      font-weight: 400;
-    }
-    header .meta {
-      display: inline-block;
-      padding: 8px 22px;
-      border: 1px solid rgba(255,255,255,.25);
-      border-radius: 30px;
-      font-size: .9rem;
-      color: rgba(255,255,255,.95);
-      backdrop-filter: blur(2px);
-    }
-
-    /* ── Main ── */
-    main { padding: 56px 0 24px; }
-
-    .row {
-      display: grid;
-      grid-template-columns: minmax(280px, 360px) 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    /* ── Poster ── */
-    .poster button {
-      display: block;
-      width: 100%;
-      padding: 0;
-      border: 1px solid var(--line);
-      background: var(--surface);
-      cursor: zoom-in;
-    }
-    .poster button img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-    .poster .caption {
-      margin-top: 10px;
-      font-size: .8rem;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    /* ── Lightbox ── */
-    .lightbox {
-      display: none;
-      position: fixed; inset: 0;
-      background: rgba(10, 20, 35, .88);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      cursor: zoom-out;
-    }
-    .lightbox.open { display: flex; }
-    .lightbox img {
-      max-width: 95vw;
-      max-height: 95vh;
-      width: auto;
-      height: auto;
-      display: block;
-      cursor: default;
-    }
-    .lightbox-close {
-      position: absolute;
-      top: 16px; right: 20px;
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 1.6rem;
-      line-height: 1;
-      cursor: pointer;
-      padding: 6px 10px;
-      opacity: .85;
-    }
-    .lightbox-close:hover { opacity: 1; }
-
-    /* ── Welcome ── */
-    .welcome h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 6px;
-      letter-spacing: -.005em;
-    }
-    .welcome .lead {
-      font-family: Georgia, "Times New Roman", serif;
-      font-style: italic;
-      font-size: 1.02rem;
-      color: var(--muted);
-      margin-bottom: 24px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid var(--line);
-      position: relative;
-    }
-    .welcome .lead::after {
-      content: '';
-      position: absolute;
-      left: 0; bottom: -1px;
-      width: 48px; height: 2px;
-      background: #126a98;
-    }
-    .welcome p {
-      font-size: .95rem;
-      line-height: 1.78;
-      margin-bottom: 14px;
-      color: #2c3e52;
-    }
-    .welcome p.dropcap::first-letter {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 2.8rem;
-      font-weight: 700;
-      line-height: .9;
-      color: #0e4d7b;
-      margin-right: 6px;
-      vertical-align: -.22em;
-    }
-    .welcome .signature {
-      margin-top: 28px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-      font-size: .9rem;
-    }
-    .welcome .signature .role {
-      color: var(--muted);
-      font-size: .76rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    .welcome .signature .name {
-      font-family: Georgia, "Times New Roman", serif;
-      font-style: italic;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    /* ── Schedule Table ── */
-    .schedule { margin-top: 64px; }
-    .schedule h2 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 16px;
-      letter-spacing: -.005em;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: .94rem;
-    }
-    th, td {
-      text-align: left;
-      padding: 13px 16px;
-      border-bottom: 1px solid var(--line);
-    }
-    thead th {
-      font-size: .76rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 600;
-      border-bottom: 2px solid var(--ink);
-    }
-    tbody tr:last-child td { border-bottom: 1px solid var(--ink); }
-    td.date {
-      white-space: nowrap;
-      color: var(--ink);
-      font-weight: 600;
-    }
-    tr.group td {
-      padding: 22px 16px 6px;
-      font-size: .72rem;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 700;
-      border-bottom: none;
-      background: transparent;
-    }
-    tr.group:first-child td { padding-top: 6px; }
-
-    /* ── Footer ── */
-    footer {
-      margin-top: 56px;
-      padding: 28px 0;
-      border-top: 1px solid var(--line);
-      text-align: center;
-      font-size: .82rem;
-      color: var(--muted);
-    }
-
-    /* ── Responsive ── */
-    @media (max-width: 760px) {
-      .row { grid-template-columns: 1fr; gap: 32px; }
-      header { padding: 40px 0 24px; }
-      main { padding: 36px 0 16px; }
-      th, td { padding: 12px 10px; }
-    }
-  </style>
+  <meta name="description" content="The 4th Oceanoise Asia, October 11-13, 2026, ARA Convention Hall, Jeju, Korea. International symposium on underwater noise in Asia." />
+  <link rel="stylesheet" href="assets/css/site.css" />
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <span class="eyebrow">International Symposium</span>
-    <h1>Oceanoise Asia <span class="year">2026</span></h1>
-    <p class="subtitle">Underwater Noise in Asia</p>
-    <p class="meta">October 11&ndash;13, 2026 &nbsp;&middot;&nbsp; ARA Convention Hall, Jeju, Korea</p>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="index.html#themes">Themes</a>
+      <a href="index.html#committees">Committees</a>
+      <a href="abstract-submission.html">Abstract Submission</a>
+      <span class="disabled" aria-disabled="true">Venue <span class="tag">Soon</span></span>
+      <span class="disabled" aria-disabled="true">Registration <span class="tag">Soon</span></span>
+      <span class="disabled" aria-disabled="true">Contact <span class="tag">Soon</span></span>
+    </nav>
+    <div class="header-inner">
+      <span class="eyebrow">International Symposium</span>
+      <h1>Oceanoise Asia <span class="year">2026</span></h1>
+      <p class="subtitle">Underwater Noise in Asia</p>
+      <p class="meta">October 11&ndash;13, 2026 &nbsp;&middot;&nbsp; ARA Convention Hall, Jeju, Korea</p>
+    </div>
   </div>
 </header>
 
@@ -323,6 +64,73 @@
       </article>
 
     </div>
+
+    <!-- Themes -->
+    <section id="themes" class="section">
+      <h2>Themes</h2>
+      <div class="theme-grid">
+        <div class="theme-card">Noise and Effect</div>
+        <div class="theme-card">Marine Bioacoustics</div>
+        <div class="theme-card">Marine Reusable Energy</div>
+        <div class="theme-card">Sonar and Signal Processing</div>
+        <div class="theme-card">Management and Policy</div>
+      </div>
+    </section>
+
+    <!-- Abstract CTA -->
+    <section id="abstract-cta" class="section">
+      <div class="copy">
+        <h2>Call for Abstracts</h2>
+        <p>Abstract submission opens <strong>10 May 2026</strong> and closes <strong>10 July 2026</strong>. Submit your abstract by email using the official Word template.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-outline" href="abstract-submission.html">Submission Guidelines</a>
+        <a class="btn btn-primary" href="mailto:oceanoiseasia2026@gmail.com?subject=Oceanoise%20Asia%202026%20Abstract%20Submission">Submit by Email</a>
+      </div>
+    </section>
+
+    <!-- Committees -->
+    <section id="committees" class="section">
+      <h2>Committees</h2>
+
+      <div class="committee-block solo">
+        <h3>Conference Chair</h3>
+        <div class="committee-grid">
+          <div class="person">Dong-Guk Paeng <span class="aff">Jeju Nat. Univ.</span></div>
+        </div>
+      </div>
+
+      <div class="committee-block solo">
+        <h3>General Secretary</h3>
+        <div class="committee-grid">
+          <div class="person">Changsoo Kim <span class="aff">Jeju Nat. Univ.</span></div>
+        </div>
+      </div>
+
+      <div class="committee-block">
+        <h3>International Committee</h3>
+        <div class="committee-grid">
+          <div class="person">Tom Akamatsu <span class="aff">Waseda Univ., JP</span></div>
+          <div class="person">Chi-Fang Chen <span class="aff">Nat. Taiwan Univ., TW</span></div>
+          <div class="person">Song Hai Li <span class="aff">Chinese Academy of Sciences, CN</span></div>
+          <div class="person">Lu Ma <span class="aff">Harbin Engineering Univ., CN</span></div>
+        </div>
+      </div>
+
+      <div class="committee-block">
+        <h3>Local Committee</h3>
+        <div class="committee-grid">
+          <div class="person">Jee Wong Choi <span class="aff">Hanyang Univ.</span></div>
+          <div class="person">Keunhwa Lee <span class="aff">Sejong Univ.</span></div>
+          <div class="person">Hyoung Sul La <span class="aff">Korea Polar Research Institute</span></div>
+          <div class="person">Gihoon Byun <span class="aff">Korea Maritime &amp; Ocean Univ.</span></div>
+          <div class="person">Youngmin Choo <span class="aff">Seoul Nat. Univ.</span></div>
+          <div class="person">Yo Sup Park <span class="aff">Korea Institute of Ocean Science &amp; Technology</span></div>
+          <div class="person">Hansoo Kim <span class="aff">Korea Institute of Ocean Science &amp; Technology</span></div>
+          <div class="person">Euna Yoon <span class="aff">Jeju Nat. Univ.</span></div>
+        </div>
+      </div>
+    </section>
 
     <!-- Important Dates -->
     <section class="schedule">
@@ -373,7 +181,7 @@
 
 <footer>
   <div class="wrap">
-    &copy; 2026 Oceanoise Asia &middot; Jeju, Korea
+    &copy; 2026 Oceanoise Asia &middot; Jeju, Korea &middot; <a href="mailto:oceanoiseasia2026@gmail.com">oceanoiseasia2026@gmail.com</a>
   </div>
 </footer>
 
