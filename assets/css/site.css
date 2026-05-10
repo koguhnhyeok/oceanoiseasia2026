@@ -146,14 +146,13 @@ header .meta .meta-link:hover { text-decoration-color: rgba(255,255,255,.85); }
 /* ── Main ── */
 main { padding: 56px 0 24px; }
 
-.row {
-  display: grid;
-  grid-template-columns: minmax(280px, 360px) 1fr;
-  gap: 48px;
-  align-items: start;
-}
+/* Shared content width — matches .content used on call-for-papers */
+main > .wrap > .content { max-width: 880px; margin: 0 auto; }
 
-/* ── Poster ── */
+/* ── Poster (standalone, full content width) ── */
+.poster {
+  margin: 0;
+}
 .poster button {
   display: block;
   width: 100%;
@@ -591,7 +590,6 @@ footer a:hover { text-decoration: underline; }
 /* ── Responsive ── */
 @media (max-width: 760px) {
   .wrap { padding: 0 22px; }
-  .row { grid-template-columns: 1fr; gap: 32px; }
   header { padding: 36px 0 32px; }
   header .eyebrow { letter-spacing: .2em; }
   main { padding: 36px 0 16px; }
