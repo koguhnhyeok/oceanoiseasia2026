@@ -12,7 +12,7 @@ This repository hosts the official preview website for Oceanoise Asia 2026.
 | Event | Date |
 |---|---|
 | Paper Submission Opens | May 10, 2026 |
-| Abstract Submission Deadline | July 10, 2026 |
+| Abstract Submission Deadline | July 31, 2026 |
 | Author Notification | August 10, 2026 |
 | Online Registration | August 11 – September 30, 2026 |
 | Conference Dates | October 11 – 13, 2026 |
