@@ -524,6 +524,235 @@ tr.group:first-child td { padding-top: 6px; }
 }
 .content .doc-section ul li strong { color: var(--ink); }
 
+/* ── Venue & accommodation ── */
+.venue-page { padding-top: 48px; }
+.venue-section {
+  margin-top: 64px;
+  scroll-margin-top: 62px;
+}
+.venue-section:first-child { margin-top: 0; }
+.section-label {
+  margin-bottom: 7px;
+  color: var(--teal);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.venue-section > h2 {
+  margin-bottom: 14px;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -.012em;
+}
+.venue-lead {
+  max-width: 68ch;
+  margin-bottom: 24px;
+  color: #3a5066;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.venue-photo {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.venue-photo img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.venue-photo figcaption,
+.venue-gallery figcaption {
+  padding: 9px 12px;
+  color: var(--muted);
+  font-size: .74rem;
+  line-height: 1.45;
+}
+.venue-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.venue-gallery figure {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.venue-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.venue-facts {
+  display: grid;
+  grid-template-columns: .8fr 1fr 1.9fr;
+  margin-top: 20px;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+.venue-fact {
+  min-width: 0;
+  padding: 16px 18px;
+  border-right: 1px solid var(--line);
+}
+.venue-fact:first-child { padding-left: 0; }
+.venue-fact:last-child { padding-right: 0; border-right: 0; }
+.venue-fact .fact-label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.venue-fact strong {
+  display: block;
+  color: var(--ink);
+  font-size: .88rem;
+  line-height: 1.5;
+}
+.map-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #dbe8f0;
+}
+.map-frame iframe {
+  display: block;
+  width: 100%;
+  height: 420px;
+  border: 0;
+}
+.travel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.travel-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.travel-card .travel-heading {
+  margin-bottom: 14px;
+  padding-left: 11px;
+  border-left: 5px solid #1478bd;
+  color: #126eb0;
+  font-size: 1.08rem;
+  font-weight: 750;
+  line-height: 1.35;
+}
+.travel-card p {
+  color: #40556a;
+  font-size: .91rem;
+  line-height: 1.68;
+}
+.campus-wayfinding {
+  margin-top: 28px;
+}
+.campus-wayfinding > h3 {
+  margin-bottom: 12px;
+  color: var(--ink);
+  font-size: 1rem;
+}
+.campus-map {
+  overflow: hidden;
+  max-width: 720px;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.campus-map picture,
+.campus-map img {
+  display: block;
+  width: 100%;
+}
+.campus-map > button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+.campus-map > button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+}
+.campus-map figcaption {
+  padding: 11px 14px;
+  background: var(--surface);
+  color: #536a7d;
+  font-size: .86rem;
+  line-height: 1.6;
+}
+.travel-links { margin-top: 16px; }
+.accommodation-note {
+  max-width: 76ch;
+  margin-bottom: 22px;
+  color: #52697c;
+  font-size: .92rem;
+  line-height: 1.7;
+}
+.hotel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.hotel-item {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.hotel-item > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.hotel-details {
+  padding: 17px 18px 18px;
+}
+.hotel-area {
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .11em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.hotel-details h3 {
+  margin-bottom: 7px;
+  color: var(--ink);
+  font-size: 1.02rem;
+  line-height: 1.42;
+}
+.hotel-travel-time {
+  margin-bottom: 13px;
+  color: #52697c;
+  font-size: .82rem;
+  line-height: 1.5;
+}
+.hotel-details a {
+  color: #126eb0;
+  font-size: .84rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.hotel-details a:hover,
+.hotel-details a:focus-visible {
+  text-decoration: underline;
+}
+
 /* ── Footer ── */
 footer {
   margin-top: 64px;
@@ -616,6 +845,26 @@ footer a:hover { text-decoration: underline; }
   .btn { flex: 1 1 auto; justify-content: center; }
   .committee-grid { grid-template-columns: 1fr; }
   .content .doc-section h2 { font-size: 1.05rem; }
+  .venue-page { padding-top: 36px; }
+  .venue-section { margin-top: 52px; }
+  .venue-facts { grid-template-columns: 1fr; }
+  .venue-fact,
+  .venue-fact:first-child,
+  .venue-fact:last-child {
+    padding: 13px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .venue-fact:last-child { border-bottom: 0; }
+  .map-frame iframe { height: 340px; }
+  .travel-grid { grid-template-columns: 1fr; }
+  .hotel-grid { grid-template-columns: 1fr; }
+  .venue-gallery {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .venue-gallery img { aspect-ratio: 16 / 9; }
+  .campus-wayfinding { margin-top: 24px; }
 }
 @media (max-width: 380px) {
   header .eyebrow { font-size: .68rem; letter-spacing: .16em; }
