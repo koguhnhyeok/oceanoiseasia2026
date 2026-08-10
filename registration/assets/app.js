@@ -271,9 +271,9 @@ function parseRequiredBoolean(value) {
   return null;
 }
 
-async function postJson(url, payload) {
+async function postJson(url, payload, { timeoutMs = 10000 } = {}) {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 10000);
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const response = await fetch(url, {
       method: "POST",
@@ -368,7 +368,7 @@ async function showVerificationRoute(config, verificationRequest) {
   showStatus(
     "neutral",
     "Ready to complete registration.",
-    "Select Complete Registration below to verify your email address and finish the registration."
+    "Select Complete Registration above to verify your email address and finish the registration."
   );
 }
 
@@ -381,7 +381,8 @@ async function handleEmailVerification() {
   try {
     const result = await postJson(
       `${state.config.apiBaseUrl}/verify-registration-email`,
-      { token: state.verificationToken }
+      { token: state.verificationToken },
+      { timeoutMs: 30000 }
     );
     state.verificationToken = "";
     elements.verificationPanel.hidden = true;
@@ -406,10 +407,15 @@ async function handleEmailVerification() {
     elements.supportNote.hidden = false;
     renderEmailPreview(result.email);
   } catch (error) {
+    const confirmationTimedOut = error?.name === "AbortError";
     showStatus(
-      "error",
-      "Registration could not be confirmed.",
-      error.publicMessage ?? "The verification link is invalid or expired."
+      confirmationTimedOut ? "neutral" : "error",
+      confirmationTimedOut
+        ? "Confirmation is taking longer than expected."
+        : "Registration could not be confirmed.",
+      confirmationTimedOut
+        ? "Check your email for the confirmation message. If it has not arrived, select Complete Registration again."
+        : error.publicMessage ?? "The verification link is invalid or expired."
     );
     elements.verificationButton.disabled = false;
     elements.verificationButton.textContent = "Complete Registration";
