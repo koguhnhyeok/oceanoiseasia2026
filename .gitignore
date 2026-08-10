@@ -19,3 +19,4 @@ $RECYCLE.BIN/
 # Build artifacts (none currently, but reserved)
 dist/
 node_modules/
+.preview-server*.log

@@ -22,8 +22,8 @@ This repository hosts the official website for Oceanoise Asia 2026.
 - **Home** — `index.html` (news, welcome message + poster, important dates, call for papers CTA)
 - **Call for Papers** — `call-for-papers.html` (themes, formatting guidelines, downloadable template, submitter's declaration)
 - **Committees** — `committees.html` (chair, secretary, international + local committees)
+- **Venue & Accommodation** — `venue.html` (venue, airport transit, campus directions, map, and accommodation information)
 - **Registration** — `registration/` (participant registration, email verification, presenter and visa-support information)
-- Venue — coming soon
 - Contact — in the footer of every page
 
 ## Submission
@@ -37,10 +37,23 @@ Abstracts are submitted by email to **oceanoiseasia2026@gmail.com** using the of
 ├── index.html                    # Home page
 ├── call-for-papers.html          # Call for Papers + formatting guidelines
 ├── committees.html               # Organizing committees
+├── venue.html                    # Venue, directions, map + accommodation
+├── registration/                 # Participant registration application
 ├── poster.jpg                    # Call for Papers poster
 ├── assets/
 │   ├── css/
 │   │   └── site.css              # Shared styles
+│   ├── images/
+│   │   ├── jeju-campus-aerial.jpg
+│   │   ├── ara-convention-hall-exterior.jpg
+│   │   ├── ara-convention-hall-wide.jpg
+│   │   ├── ara-convention-hall-entrance.jpg
+│   │   ├── ara-campus-walking-map.svg
+│   │   ├── ara-campus-walking-map.png
+│   │   ├── ocean-suites-jeju.jpg
+│   │   ├── jeju-oriental-hotel.jpg
+│   │   ├── ramada-jeju-city-hall.jpg
+│   │   └── hotel-nanta-jeju.jpg
 │   └── downloads/
 │       ├── Abstract_Template.docx
 │       ├── Abstract_Submission_Guidelines.docx
