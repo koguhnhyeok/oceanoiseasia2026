@@ -1,7 +1,7 @@
 [
   {
     "path": "assets/app.js",
-    "sha256": "c38c154c03dd0fea7c874e36e57cfe0a48633b4769baaca03f68ac6a6e9d2c71"
+    "sha256": "4a32202700dc7c585462d8c46590c4198e3e2bd2d2d6c9c703d1f03dbaf3a342"
   },
   {
     "path": "assets/countries.js",
@@ -9,11 +9,15 @@
   },
   {
     "path": "assets/styles.css",
-    "sha256": "924e73cd1edf9663c868b6cc3b2e78eed27a9a4e7c517875a353c107e6e61bfd"
+    "sha256": "4230ed514416e73581efa5e488ce1bcbfed20493062fc782fbf1ab455327cc4c"
   },
   {
     "path": "assets/validation.js",
     "sha256": "17e33235381e37c30cecff0e15588408ae6fd4d6210be622078968a2948fed99"
+  },
+  {
+    "path": "config.runtime.json",
+    "sha256": "f3673976c5634295e50e363326157a7d9fe1117dcdb21d1815e3f29b8aaa9244"
   },
   {
     "path": "index.html",

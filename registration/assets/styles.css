@@ -545,7 +545,9 @@ body {
 }
 
 .oa-registration__status[data-tone="error"] {
+  border: 1px solid #ead1cc;
   background: #fff3f1;
+  padding: 24px 22px;
 }
 
 .oa-registration__status[data-tone="success"] {
@@ -695,6 +697,10 @@ body {
 
   .oa-registration__button {
     width: 100%;
+  }
+
+  .oa-registration__status[data-tone="error"] {
+    padding: 20px 18px;
   }
 }
 
