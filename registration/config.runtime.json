@@ -1,0 +1,18 @@
+{
+  "environment": "production",
+  "eventId": "oceanoise-asia-2026",
+  "eventName": "Oceanoise Asia 2026",
+  "registrationVersion": "1.0.0",
+  "apiBaseUrl": "https://euvfkekqhkjtctkvniml.supabase.co/functions/v1",
+  "supportEmail": "oceanoiseasia2026@gmail.com",
+  "privacyVersion": "2026-08-10",
+  "turnstileMode": "managed",
+  "turnstileSiteKey": "0x4AAAAAAELznKWRhm5h1nKw",
+  "turnstileAction": "registration",
+  "debug": false,
+  "mockApi": false,
+  "emailDeliveryMode": "live_send",
+  "statusLookupEnabled": false,
+  "useAllCountries": true,
+  "countryOptions": []
+}
