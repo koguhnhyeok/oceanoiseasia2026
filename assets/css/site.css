@@ -328,6 +328,7 @@ main > .wrap > .content { max-width: 880px; margin: 0 auto; }
   text-decoration: none;
 }
 .news-item a:hover { text-decoration: underline; }
+.news-item + .news-item { margin-top: 28px; }
 
 /* ── Committees ── */
 .committee-block { margin-bottom: 28px; }
