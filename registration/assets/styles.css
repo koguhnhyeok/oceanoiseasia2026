@@ -42,31 +42,35 @@ body {
 }
 
 .oa-registration__nav {
-  position: relative;
-  z-index: 2;
+  position: sticky;
+  top: 0;
+  z-index: 50;
   background: var(--navy-950);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06), 0 4px 12px rgba(10, 34, 64, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 1px 0 rgba(10, 34, 64, 0.04), 0 4px 12px rgba(10, 34, 64, 0.08);
 }
 
 .oa-registration__nav-inner {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  gap: clamp(18px, 3.4vw, 42px);
-  width: min(1040px, 100%);
+  flex-wrap: wrap;
+  gap: 0;
+  width: 100%;
   min-height: 42px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 56px;
 }
 
 .oa-registration__nav a,
 .oa-registration__nav-inner > span {
   position: relative;
-  color: #c9d6e1;
-  font-size: 11px;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.76rem;
   letter-spacing: 0.14em;
-  line-height: 42px;
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
@@ -83,9 +87,9 @@ body {
 
 .oa-registration__nav-inner > [aria-current="page"]::after {
   position: absolute;
-  right: 0;
-  bottom: 6px;
-  left: 0;
+  right: 14px;
+  bottom: 7px;
+  left: 14px;
   height: 2px;
   background: var(--ocean-300);
   content: "";
@@ -110,30 +114,28 @@ body {
 }
 
 .oa-registration__hero-inner {
-  width: min(960px, 100%);
+  width: 100%;
   margin: 0 auto;
-  padding: 66px 20px 104px;
+  padding: 72px 56px 96px;
 }
 
 .oa-registration__hero-eyebrow {
   display: inline-block;
   margin: 0 0 22px;
-  padding-bottom: 7px;
-  border-bottom: 1px solid rgba(114, 204, 228, 0.7);
-  color: #d9edf5;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  line-height: 1.4;
+  padding: 0 0 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
 }
 
 .oa-registration__hero h1 {
-  margin: 0;
+  margin: 0 0 14px;
   color: #ffffff;
-  font-size: clamp(36px, 5vw, 52px);
+  font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
   line-height: 1.1;
 }
 
@@ -142,16 +144,18 @@ body {
 }
 
 .oa-registration__hero-section {
-  margin: 18px 0 0;
-  color: #edf8fb;
-  font-size: 20px;
-  font-weight: 500;
+  margin: 0 0 22px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  font-weight: 400;
 }
 
 .oa-registration__hero-meta {
-  margin: 28px 0 0;
-  color: #d3e5ee;
-  font-size: 15px;
+  margin: 0;
+  padding: 8px 0 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
 }
 
 .oa-registration__wave {
@@ -159,7 +163,7 @@ body {
   right: 0;
   bottom: -1px;
   left: 0;
-  height: 58px;
+  height: 70px;
   color: #dceaf3;
   line-height: 0;
 }
@@ -174,11 +178,11 @@ body {
 }
 
 .oa-registration__content {
-  padding: 52px 20px 80px;
+  padding: 56px 56px 80px;
 }
 
 .oa-registration__shell {
-  width: min(840px, 100%);
+  width: min(880px, 100%);
   margin: 0 auto;
 }
 
@@ -637,13 +641,27 @@ body {
   font-weight: 700;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 760px) {
   .oa-registration__nav-inner {
+    align-items: stretch;
     justify-content: flex-start;
-    gap: 22px;
+    flex-wrap: nowrap;
+    gap: 0;
+    min-height: 38px;
     overflow-x: auto;
-    padding: 0 16px;
+    padding: 0 22px;
     scrollbar-width: none;
+  }
+
+  .oa-registration__nav a,
+  .oa-registration__nav-inner > span {
+    padding: 0 10px;
+  }
+
+  .oa-registration__nav-inner > [aria-current="page"]::after {
+    right: 10px;
+    bottom: 6px;
+    left: 10px;
   }
 
   .oa-registration__nav-inner::-webkit-scrollbar {
@@ -651,25 +669,23 @@ body {
   }
 
   .oa-registration__hero-inner {
-    padding: 50px 18px 88px;
+    padding: 36px 22px 32px;
   }
 
   .oa-registration__hero-eyebrow {
-    margin-bottom: 18px;
-    font-size: 10px;
+    letter-spacing: 0.2em;
   }
 
   .oa-registration__hero-section {
-    font-size: 18px;
+    font-size: clamp(0.95rem, 1.6vw, 1.1rem);
   }
 
   .oa-registration__hero-meta {
-    margin-top: 22px;
-    font-size: 13px;
+    font-size: 0.9rem;
   }
 
   .oa-registration__content {
-    padding: 28px 14px 48px;
+    padding: 36px 22px 48px;
   }
 
   .oa-registration__header {
