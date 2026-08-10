@@ -5,7 +5,7 @@ International Symposium on Underwater Noise in Asia
 
 Conference Chair: **Dong-Guk Paeng**
 
-This repository hosts the official preview website for Oceanoise Asia 2026.
+This repository hosts the official website for Oceanoise Asia 2026.
 
 ## Important Dates
 
@@ -22,7 +22,8 @@ This repository hosts the official preview website for Oceanoise Asia 2026.
 - **Home** — `index.html` (news, welcome message + poster, important dates, call for papers CTA)
 - **Call for Papers** — `call-for-papers.html` (themes, formatting guidelines, downloadable template, submitter's declaration)
 - **Committees** — `committees.html` (chair, secretary, international + local committees)
-- Venue / Registration — coming soon
+- **Registration** — `registration/` (participant registration, email verification, presenter and visa-support information)
+- Venue — coming soon
 - Contact — in the footer of every page
 
 ## Submission

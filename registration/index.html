@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <meta name="referrer" content="no-referrer">
+    <title>Oceanoise Asia 2026 Registration</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+  </head>
+  <body>
+    <main class="oa-registration" aria-labelledby="oa-registration-title">
+      <nav class="oa-registration__nav" aria-label="Primary">
+        <div class="oa-registration__nav-inner">
+          <a href="https://www.oceanoiseasia2026.com/index.html">Home</a>
+          <a href="https://www.oceanoiseasia2026.com/call-for-papers.html">Call for Papers</a>
+          <a href="https://www.oceanoiseasia2026.com/committees.html">Committees</a>
+          <span class="oa-registration__nav-disabled">Venue <small>(Soon)</small></span>
+          <span aria-current="page">Registration</span>
+        </div>
+      </nav>
+
+      <header class="oa-registration__hero">
+        <div class="oa-registration__hero-inner">
+          <p class="oa-registration__hero-eyebrow">International Symposium</p>
+          <h1 id="oa-registration-title">
+            Oceanoise Asia <span>2026</span>
+          </h1>
+          <p class="oa-registration__hero-section">Registration</p>
+          <p class="oa-registration__hero-meta">
+            October 11–13, 2026 · ARA Convention Hall, Jeju, Korea
+          </p>
+        </div>
+        <div class="oa-registration__wave" aria-hidden="true">
+          <svg viewBox="0 0 1440 96" preserveAspectRatio="none">
+            <path d="M0,55 C170,90 310,38 485,58 C650,80 790,42 960,58 C1120,76 1265,43 1440,58 L1440,96 L0,96 Z"></path>
+          </svg>
+        </div>
+      </header>
+
+      <div class="oa-registration__content">
+      <section class="oa-registration__shell" aria-labelledby="oa-registration-form-title">
+        <header class="oa-registration__header">
+          <div>
+            <h2 id="oa-registration-form-title" data-page-title>Participant Registration</h2>
+            <p class="oa-registration__introduction" data-page-introduction>
+              Enter the participant information below to register for Oceanoise Asia 2026.
+            </p>
+          </div>
+        </header>
+
+        <section class="oa-registration__process" aria-label="Registration information">
+          <p class="oa-registration__fee-line">
+            <span class="oa-registration__fee-label">Registration fee</span>
+            <strong>USD 200 <i aria-hidden="true">·</i> KRW 300,000</strong>
+            <span class="oa-registration__payment-note">
+              <strong>On-site payment only</strong>
+              <span>Physical credit or debit card required. Apple Pay and Samsung Pay are not accepted.</span>
+            </span>
+          </p>
+          <div class="oa-registration__guidance">
+            <p>
+              <strong>Email confirmation</strong>
+              <span>Submit the form and verify your email. Your registration details will be sent after confirmation.</span>
+            </p>
+            <p>
+              <strong>Visa support</strong>
+              <span>Invitation letters are optional and available upon request. The Organizing Committee will send requested letters by email.</span>
+            </p>
+          </div>
+        </section>
+
+        <form class="oa-registration__form" data-registration-form novalidate>
+          <div class="oa-registration__grid">
+            <label class="oa-registration__field">
+              <span>Name</span>
+              <input name="name" autocomplete="name" maxlength="100" required>
+            </label>
+
+            <label class="oa-registration__field">
+              <span>Email</span>
+              <input name="email" type="email" autocomplete="email" maxlength="254" required>
+            </label>
+
+            <label class="oa-registration__field oa-registration__field--wide">
+              <span>Affiliation</span>
+              <input name="affiliation" autocomplete="organization" maxlength="200" required>
+            </label>
+
+            <label class="oa-registration__field">
+              <span>Student Status</span>
+              <select name="isStudent" required>
+                <option value="">Select status</option>
+                <option value="true">Student</option>
+                <option value="false">Non-student</option>
+              </select>
+            </label>
+
+            <label class="oa-registration__field">
+              <span>Country</span>
+              <input
+                name="countryName"
+                list="oa-registration-country-options"
+                autocomplete="country-name"
+                placeholder="Start typing a country"
+                required
+                data-country-input
+              >
+              <datalist id="oa-registration-country-options" data-country-options></datalist>
+            </label>
+
+            <label class="oa-registration__field">
+              <span class="oa-registration__field-label">
+                Presenter Status
+                <small>Presenters must select Presenter</small>
+              </span>
+              <select name="isPresenter" required data-presenter-select>
+                <option value="">Select status</option>
+                <option value="true">Presenter</option>
+                <option value="false">Non-presenter</option>
+              </select>
+            </label>
+
+            <label class="oa-registration__field oa-registration__field--wide" data-paper-title-field hidden>
+              <span>Abstract Title</span>
+              <input name="paperTitle" maxlength="300" data-paper-title-input disabled>
+              <small>Enter the title of the abstract you submitted. Required for presenters.</small>
+            </label>
+          </div>
+
+          <label class="oa-registration__consent oa-registration__invitation-letter">
+            <input name="requiresInvitationLetter" type="checkbox">
+            <span>
+              <strong>Invitation Letter (Optional)</strong>
+              Select this option only if you need an invitation letter for your visa application. The Organizing Committee will send it to the email address provided above.
+            </span>
+          </label>
+
+          <p class="oa-registration__privacy-note">
+            Registration information is used only to process participation, send conference communications,
+            and provide requested visa support. Privacy enquiries may be sent to
+            <a href="mailto:oceanoiseasia2026@gmail.com">oceanoiseasia2026@gmail.com</a>.
+          </p>
+
+          <div class="oa-registration__turnstile" data-turnstile-container hidden>
+            <div data-turnstile-widget></div>
+          </div>
+
+          <div class="oa-registration__actions">
+            <button class="oa-registration__button" type="submit" data-submit-button>
+              Submit Registration
+            </button>
+            <button class="oa-registration__button oa-registration__button--secondary" type="button" data-reset-button hidden>
+              New Registration
+            </button>
+          </div>
+        </form>
+
+        <section class="oa-registration__verification" data-verification-panel hidden>
+          <p>
+            This page will verify your email address and complete your Oceanoise Asia 2026 registration.
+          </p>
+          <p class="oa-registration__verification-note">
+            We will not ask for your password or payment information on this page.
+          </p>
+          <button class="oa-registration__button" type="button" data-verification-button>
+            Complete Registration
+          </button>
+        </section>
+
+        <section class="oa-registration__status" aria-live="polite" data-status-box hidden>
+          <h2 data-status-title>Status</h2>
+          <p data-status-message></p>
+          <dl class="oa-registration__summary" data-registration-summary hidden>
+            <div>
+              <dt>Name</dt>
+              <dd data-summary-name></dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd data-summary-email></dd>
+            </div>
+            <div>
+              <dt>Affiliation</dt>
+              <dd data-summary-affiliation></dd>
+            </div>
+            <div>
+              <dt>Country</dt>
+              <dd data-summary-country></dd>
+            </div>
+            <div>
+              <dt>Student</dt>
+              <dd data-summary-student></dd>
+            </div>
+            <div>
+              <dt>Presenter</dt>
+              <dd data-summary-presenter></dd>
+            </div>
+            <div data-summary-paper-item hidden>
+              <dt>Abstract Title</dt>
+              <dd data-summary-paper-title></dd>
+            </div>
+            <div>
+              <dt>Invitation Letter</dt>
+              <dd data-summary-invitation-letter></dd>
+            </div>
+            <div hidden>
+              <dd data-summary-code></dd>
+              <dd data-summary-status></dd>
+              <dd data-summary-payment></dd>
+            </div>
+          </dl>
+          <p class="oa-registration__support-note" data-support-note hidden></p>
+        </section>
+
+        <section class="oa-registration__email-preview" data-email-preview hidden>
+          <header>
+            <h2>Email Preview</h2>
+            <span>PREVIEW</span>
+          </header>
+          <p class="oa-registration__email-subject" data-email-subject></p>
+          <pre data-email-body></pre>
+        </section>
+      </section>
+      </div>
+    </main>
+
+    <script type="module" src="./assets/app.js"></script>
+  </body>
+</html>
