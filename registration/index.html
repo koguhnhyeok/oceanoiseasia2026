@@ -73,7 +73,7 @@
         <form class="oa-registration__form" data-registration-form novalidate>
           <div class="oa-registration__grid">
             <label class="oa-registration__field">
-              <span>Name</span>
+              <span>Full Name (as shown in your passport)</span>
               <input name="name" autocomplete="name" maxlength="100" required>
             </label>
 
@@ -97,12 +97,12 @@
             </label>
 
             <label class="oa-registration__field">
-              <span>Country</span>
+              <span>Nationality (as shown in your passport)</span>
               <input
                 name="countryName"
                 list="oa-registration-country-options"
                 autocomplete="country-name"
-                placeholder="Start typing a country"
+                placeholder="Select nationality"
                 required
                 data-country-input
               >
@@ -173,7 +173,7 @@
           <p data-status-message></p>
           <dl class="oa-registration__summary" data-registration-summary hidden>
             <div>
-              <dt>Name</dt>
+              <dt>Full Name</dt>
               <dd data-summary-name></dd>
             </div>
             <div>
@@ -185,7 +185,7 @@
               <dd data-summary-affiliation></dd>
             </div>
             <div>
-              <dt>Country</dt>
+              <dt>Nationality</dt>
               <dd data-summary-country></dd>
             </div>
             <div>

@@ -1,7 +1,7 @@
 [
   {
     "path": "assets/app.js",
-    "sha256": "4a32202700dc7c585462d8c46590c4198e3e2bd2d2d6c9c703d1f03dbaf3a342"
+    "sha256": "9aa5370b86a409715dae5aca9f09833ab713f3dc50bc02af61ae05bbbe7df7db"
   },
   {
     "path": "assets/countries.js",
@@ -21,6 +21,6 @@
   },
   {
     "path": "index.html",
-    "sha256": "a9b97ca99c488d091a8949bf7b5106abd310a1135c91d6050be986263d0db2ea"
+    "sha256": "3a2ab026fa7ede872f8ba319659437b7509423273776f9353e5cac4864d3d5fd"
   }
 ]
