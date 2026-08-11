@@ -139,7 +139,7 @@ async function handleSubmit(event) {
   const validation = validateRegistrationInput(payload, getValidationOptions(state.config));
   if (!validation.ok) {
     if (validation.errors.countryCode) {
-      elements.countryInput.setCustomValidity("Select a country from the suggested list.");
+      elements.countryInput.setCustomValidity("Select a nationality from the suggested list.");
     }
     elements.form.reportValidity();
     showStatus("error", "Please correct the highlighted information.", summarizeErrors(validation.errors));
@@ -261,7 +261,7 @@ function normalizeCountryKey(value) {
 function validateCountrySelection() {
   const value = elements.countryInput.value.trim();
   const valid = value.length === 0 || resolveCountryCode(value) !== "";
-  elements.countryInput.setCustomValidity(valid ? "" : "Select a country from the suggested list.");
+  elements.countryInput.setCustomValidity(valid ? "" : "Select a nationality from the suggested list.");
   return valid;
 }
 
