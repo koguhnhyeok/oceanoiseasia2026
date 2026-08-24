@@ -1,26 +1,26 @@
 [
   {
     "path": "assets/app.js",
-    "sha256": "9aa5370b86a409715dae5aca9f09833ab713f3dc50bc02af61ae05bbbe7df7db"
+    "sha256": "3d4abc558c6813389c25bb8a8dfbe4c2bd8ead2c0893e8edb2b1dd209f87d8e8"
   },
   {
     "path": "assets/countries.js",
-    "sha256": "70a20a345b38c5dc4d76422ada3f3e3faad070e98046572b8c45fd0453ccb790"
+    "sha256": "2697592002e355444f0bbdab4dde527451da3c41e1c15669c3fcae658339bee5"
   },
   {
     "path": "assets/styles.css",
-    "sha256": "28f827837ac563f52e7864e0f5e84f9968d612266cb4971bc7340b5ef59f81e6"
+    "sha256": "ca0fa1a865ff34880ac8fb79e5085c0d377f67869670e61565f738d79ad682e3"
   },
   {
     "path": "assets/validation.js",
-    "sha256": "17e33235381e37c30cecff0e15588408ae6fd4d6210be622078968a2948fed99"
+    "sha256": "bceb0e88e5a9a1f831b55f07746221132777b1d7ddf530bf91d43f9a7bc0fa5f"
   },
   {
     "path": "config.runtime.json",
-    "sha256": "f3673976c5634295e50e363326157a7d9fe1117dcdb21d1815e3f29b8aaa9244"
+    "sha256": "d461e1164587760515926387ba80fc5390212b2571fdcae4a67084c75b1692e0"
   },
   {
     "path": "index.html",
-    "sha256": "3a2ab026fa7ede872f8ba319659437b7509423273776f9353e5cac4864d3d5fd"
+    "sha256": "96b5ab48f44905d0881114b55f2707d8ad7c050c5fd5c4f59f516e86cd114cf7"
   }
 ]
