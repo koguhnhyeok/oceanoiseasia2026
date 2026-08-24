@@ -945,10 +945,23 @@ tr.group:first-child td { padding-top: 6px; }
 .program-table__session {
   background: #f2f7fa;
 }
-.program-table__session th { border-left: 3px solid var(--teal); }
+.program-table__session th,
+.program-table__discussion th { border-left: 3px solid var(--teal); }
 .program-table__session td {
   color: var(--ink);
   font-weight: 700;
+}
+.program-table__discussion {
+  background: #f2f7fa;
+}
+.program-table__session th,
+.program-table__session td {
+  border-bottom-color: #d2e0e8;
+}
+.program-table__discussion td {
+  color: #526b7d;
+  font-size: .9rem;
+  font-weight: 550;
 }
 .session-number {
   display: inline-block;
@@ -962,6 +975,16 @@ tr.group:first-child td { padding-top: 6px; }
   text-transform: uppercase;
 }
 .session-title::before { content: ": "; }
+.discussion-session {
+  display: inline-block;
+  min-width: 72px;
+  margin-right: 16px;
+  color: #6b8798;
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -1120,6 +1143,12 @@ footer a:hover { text-decoration: underline; }
     font-size: .63rem;
   }
   .session-title::before { content: ""; }
+  .discussion-session {
+    display: block;
+    min-width: 0;
+    margin: 0 0 4px;
+    font-size: .61rem;
+  }
 }
 @media (max-width: 380px) {
   header .eyebrow { font-size: .68rem; letter-spacing: .16em; }
