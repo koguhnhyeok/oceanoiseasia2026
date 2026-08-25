@@ -100,12 +100,28 @@ header.page-hero {
   background: var(--ink);
   border-bottom: 1px solid #153d64;
 }
+header.home-hero,
+header.page-hero {
+  background:
+    linear-gradient(90deg, rgba(6, 27, 52, .70) 0%, rgba(10, 34, 64, .54) 48%, rgba(10, 34, 64, .40) 100%),
+    url('../images/jeju-campus-aerial.jpg') center 22% / cover no-repeat;
+}
+header.home-hero {
+  padding: 62px 0 64px;
+}
 header.home-hero::after,
 header.page-hero::after { display: none; }
 header.home-hero .header-inner,
 header.page-hero .header-inner {
   max-width: 880px;
   margin: 0 auto;
+}
+header.home-hero .header-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(230px, 300px);
+  align-items: end;
+  gap: 48px;
+  max-width: 880px;
 }
 header.home-hero .eyebrow,
 header.page-hero .eyebrow {
@@ -126,6 +142,49 @@ header.home-hero .meta,
 header.page-hero .meta {
   padding-top: 0;
   color: rgba(255,255,255,.75);
+}
+.home-hero-dates {
+  padding-bottom: 2px;
+  color: #fff;
+  text-align: right;
+  text-shadow: 0 1px 12px rgba(4, 20, 38, .28);
+}
+.home-hero-dates__title {
+  display: block;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,.65);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 650;
+  letter-spacing: .2em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.home-hero-dates__title:hover { border-bottom-color: #fff; }
+.home-hero-dates dl { display: grid; gap: 12px; }
+.home-hero-dates dl > div { display: grid; gap: 1px; }
+.home-hero-dates dt {
+  color: rgba(255,255,255,.72);
+  font-size: .72rem;
+  letter-spacing: .03em;
+}
+.home-hero-dates dd {
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.hero-photo-credit {
+  position: absolute;
+  right: max(22px, calc((100vw - 880px) / 2));
+  bottom: 10px;
+  color: rgba(255,255,255,.56);
+  font-size: .58rem;
+  font-weight: 400;
+  letter-spacing: .025em;
+  line-height: 1.2;
+  text-align: right;
 }
 
 /* ── Top nav (sticky) ── */
@@ -1060,6 +1119,20 @@ footer a:hover { text-decoration: underline; }
   header { padding: 36px 0 32px; }
   header.home-hero,
   header.page-hero { padding: 34px 0 35px; }
+  header.home-hero { padding: 42px 0 44px; }
+  header.home-hero .header-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .home-hero-dates {
+    width: min(100%, 300px);
+    margin-left: auto;
+  }
+  .hero-photo-credit {
+    right: 22px;
+    bottom: 8px;
+    font-size: .54rem;
+  }
   .poster-float {
     float: none;
     width: 100%;
