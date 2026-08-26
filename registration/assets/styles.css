@@ -107,8 +107,8 @@ body {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(at 50% 0%, #1a8ab5 0%, transparent 60%),
-    linear-gradient(180deg, var(--navy-950) 0%, var(--navy-800) 55%, var(--ocean-700) 100%);
+    linear-gradient(90deg, rgba(6, 27, 52, 0.70) 0%, rgba(10, 34, 64, 0.54) 48%, rgba(10, 34, 64, 0.40) 100%),
+    url("./jeju-campus-aerial.jpg") center 22% / cover no-repeat;
   color: #ffffff;
   text-align: center;
 }
@@ -175,6 +175,19 @@ body {
 
 .oa-registration__wave path {
   fill: currentColor;
+}
+
+.oa-registration__hero-photo-credit {
+  position: absolute;
+  right: max(22px, calc((100vw - 880px) / 2));
+  bottom: 10px;
+  z-index: 1;
+  color: rgba(10, 34, 64, 0.60);
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  line-height: 1.2;
+  text-align: right;
 }
 
 .oa-registration__content {
@@ -670,6 +683,12 @@ body {
 
   .oa-registration__hero-inner {
     padding: 36px 22px 32px;
+  }
+
+  .oa-registration__hero-photo-credit {
+    right: 22px;
+    bottom: 8px;
+    font-size: 0.54rem;
   }
 
   .oa-registration__hero-eyebrow {
