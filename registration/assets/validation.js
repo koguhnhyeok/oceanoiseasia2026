@@ -1,4 +1,4 @@
-export const REGISTRATION_API_VERSION = 6;
+export const REGISTRATION_API_VERSION = 7;
 
 const UUID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -12,7 +12,10 @@ const ALLOWED_REGISTRATION_FIELDS = new Set([
   "affiliation",
   "countryCode",
   "isStudent",
+  "hasPaper",
   "isPresenter",
+  "isCoAuthor",
+  "isCorrespondingAuthor",
   "paperTitle",
   "requiresInvitationLetter",
   "clientSubmissionId",
@@ -61,8 +64,9 @@ export function validateRegistrationInput(input, options = {}) {
   const allowedCountryCodes = new Set(options.countryCodes ?? []);
 
   const apiVersion = Number(input.apiVersion);
-  if (apiVersion !== REGISTRATION_API_VERSION) {
-    addError(errors, "apiVersion", `apiVersion must be ${REGISTRATION_API_VERSION}.`);
+  const legacyApi = apiVersion === 6;
+  if (!legacyApi && apiVersion !== REGISTRATION_API_VERSION) {
+    addError(errors, "apiVersion", `apiVersion must be 6 or ${REGISTRATION_API_VERSION}.`);
   }
 
   const eventId = trimString(input.eventId);
@@ -98,16 +102,39 @@ export function validateRegistrationInput(input, options = {}) {
     addError(errors, "isStudent", "Student status must be selected.");
   }
 
+  const hasPaper = legacyApi ? input.isPresenter : input.hasPaper;
+  if (!legacyApi && typeof hasPaper !== "boolean") {
+    addError(errors, "hasPaper", "Abstract author status must be selected.");
+  }
+
   const isPresenter = input.isPresenter;
-  if (typeof isPresenter !== "boolean") {
-    addError(errors, "isPresenter", "Presenter status must be selected.");
+  const isCoAuthor = legacyApi ? false : input.isCoAuthor;
+  const isCorrespondingAuthor = legacyApi ? false : input.isCorrespondingAuthor;
+  for (const [field, value, label] of [
+    ["isPresenter", isPresenter, "Presenter role"],
+    ["isCoAuthor", isCoAuthor, "Co-author role"],
+    ["isCorrespondingAuthor", isCorrespondingAuthor, "Corresponding author role"]
+  ]) {
+    if ((!legacyApi || field === "isPresenter") && typeof value !== "boolean") {
+      addError(errors, field, `${label} must be provided.`);
+    }
   }
 
   const paperTitle = trimString(input.paperTitle);
-  if (isPresenter === true && (paperTitle.length < 1 || paperTitle.length > 300)) {
-    addError(errors, "paperTitle", "Abstract title is required for presenters and must be 1-300 characters.");
-  } else if (isPresenter === false && paperTitle.length > 0) {
-    addError(errors, "paperTitle", "Abstract title must be empty for non-presenters.");
+  if (hasPaper === true) {
+    if (paperTitle.length < 1 || paperTitle.length > 300) {
+      addError(errors, "paperTitle", "Submitted abstract title is required and must be 1-300 characters.");
+    }
+    if (isPresenter === false && isCoAuthor === false && isCorrespondingAuthor === false) {
+      addError(errors, "paperRoles", "Select at least one author role for the abstract.");
+    }
+  } else if (hasPaper === false) {
+    if (paperTitle.length > 0) {
+      addError(errors, "paperTitle", "Abstract title must be empty when no abstract is registered.");
+    }
+    if (isPresenter === true || isCoAuthor === true || isCorrespondingAuthor === true) {
+      addError(errors, "paperRoles", "Author roles must be empty when no abstract is registered.");
+    }
   }
 
   const requiresInvitationLetter = input.requiresInvitationLetter;
@@ -143,8 +170,11 @@ export function validateRegistrationInput(input, options = {}) {
       affiliation,
       countryCode,
       isStudent,
+      hasPaper,
       isPresenter,
-      paperTitle: isPresenter ? paperTitle : null,
+      isCoAuthor,
+      isCorrespondingAuthor,
+      paperTitle: hasPaper ? paperTitle : null,
       requiresInvitationLetter,
       clientSubmissionId,
       turnstileToken

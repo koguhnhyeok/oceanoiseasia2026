@@ -16,9 +16,10 @@ const elements = {
   form: document.querySelector("[data-registration-form]"),
   countryInput: document.querySelector("[data-country-input]"),
   countryOptions: document.querySelector("[data-country-options]"),
-  presenterSelect: document.querySelector("[data-presenter-select]"),
-  paperTitleField: document.querySelector("[data-paper-title-field]"),
+  paperStatusSelect: document.querySelector("[data-paper-status-select]"),
+  paperDetails: document.querySelector("[data-paper-details]"),
   paperTitleInput: document.querySelector("[data-paper-title-input]"),
+  paperRoleInputs: [...document.querySelectorAll("[data-paper-role]")],
   submitButton: document.querySelector("[data-submit-button]"),
   resetButton: document.querySelector("[data-reset-button]"),
   statusBox: document.querySelector("[data-status-box]"),
@@ -33,7 +34,9 @@ const elements = {
   summaryAffiliation: document.querySelector("[data-summary-affiliation]"),
   summaryCountry: document.querySelector("[data-summary-country]"),
   summaryStudent: document.querySelector("[data-summary-student]"),
-  summaryPresenter: document.querySelector("[data-summary-presenter]"),
+  summaryHasPaper: document.querySelector("[data-summary-has-paper]"),
+  summaryPaperRolesItem: document.querySelector("[data-summary-paper-roles-item]"),
+  summaryPaperRoles: document.querySelector("[data-summary-paper-roles]"),
   summaryPaperItem: document.querySelector("[data-summary-paper-item]"),
   summaryPaperTitle: document.querySelector("[data-summary-paper-title]"),
   summaryInvitationLetter: document.querySelector("[data-summary-invitation-letter]"),
@@ -73,10 +76,13 @@ async function init() {
   }
   elements.form.addEventListener("submit", handleSubmit);
   elements.resetButton.addEventListener("click", resetForm);
-  elements.presenterSelect.addEventListener("change", syncPresenterFields);
+  elements.paperStatusSelect.addEventListener("change", syncPaperFields);
+  for (const roleInput of elements.paperRoleInputs) {
+    roleInput.addEventListener("change", validatePaperRoles);
+  }
   elements.countryInput.addEventListener("input", () => elements.countryInput.setCustomValidity(""));
   elements.countryInput.addEventListener("change", validateCountrySelection);
-  syncPresenterFields();
+  syncPaperFields();
   await initializeTurnstile(config);
 }
 
@@ -127,7 +133,10 @@ async function handleSubmit(event) {
     affiliation: formData.get("affiliation"),
     countryCode: resolveCountryCode(formData.get("countryName")),
     isStudent: parseRequiredBoolean(formData.get("isStudent")),
-    isPresenter: parseRequiredBoolean(formData.get("isPresenter")),
+    hasPaper: parseRequiredBoolean(formData.get("hasPaper")),
+    isPresenter: formData.get("isPresenter") === "on",
+    isCoAuthor: formData.get("isCoAuthor") === "on",
+    isCorrespondingAuthor: formData.get("isCorrespondingAuthor") === "on",
     paperTitle: formData.get("paperTitle") ?? "",
     requiresInvitationLetter: formData.get("requiresInvitationLetter") === "on",
     clientSubmissionId: state.clientSubmissionId,
@@ -140,6 +149,9 @@ async function handleSubmit(event) {
   if (!validation.ok) {
     if (validation.errors.countryCode) {
       elements.countryInput.setCustomValidity("Select a nationality from the suggested list.");
+    }
+    if (validation.errors.paperRoles) {
+      elements.paperRoleInputs[0].setCustomValidity("Select at least one author role for your abstract.");
     }
     elements.form.reportValidity();
     showStatus("error", "Please correct the highlighted information.", summarizeErrors(validation.errors));
@@ -188,7 +200,10 @@ function renderRegistrationResult(result, submitted) {
     affiliation: submitted.affiliation,
     country: submitted.countryName,
     isStudent: submitted.isStudent,
+    hasPaper: submitted.hasPaper,
     isPresenter: submitted.isPresenter,
+    isCoAuthor: submitted.isCoAuthor,
+    isCorrespondingAuthor: submitted.isCorrespondingAuthor,
     paperTitle: submitted.paperTitle,
     requiresInvitationLetter: submitted.requiresInvitationLetter
   });
@@ -216,7 +231,7 @@ function renderEmailPreview(email) {
 
 function resetForm() {
   elements.form.reset();
-  syncPresenterFields();
+  syncPaperFields();
   elements.countryInput.setCustomValidity("");
   state.clientSubmissionId = createUuid();
   elements.resetButton.hidden = true;
@@ -236,18 +251,31 @@ function getValidationOptions(config) {
   };
 }
 
-function syncPresenterFields() {
-  const presenter = elements.presenterSelect.value === "true";
-  elements.paperTitleField.hidden = !presenter;
-  elements.paperTitleInput.disabled = !presenter;
-  elements.paperTitleInput.required = presenter;
+function syncPaperFields() {
+  const hasPaper = elements.paperStatusSelect.value === "true";
+  elements.paperDetails.hidden = !hasPaper;
+  elements.paperDetails.disabled = !hasPaper;
+  elements.paperTitleInput.required = hasPaper;
   elements.paperTitleInput.setAttribute(
     "aria-label",
-    presenter ? "Abstract Title Required for presenters" : "Abstract Title"
+    hasPaper ? "Submitted Abstract Title Required" : "Submitted Abstract Title"
   );
-  if (!presenter) {
+  if (!hasPaper) {
     elements.paperTitleInput.value = "";
+    for (const roleInput of elements.paperRoleInputs) {
+      roleInput.checked = false;
+      roleInput.setCustomValidity("");
+    }
   }
+}
+
+function validatePaperRoles() {
+  const hasPaper = elements.paperStatusSelect.value === "true";
+  const hasRole = elements.paperRoleInputs.some((input) => input.checked);
+  elements.paperRoleInputs[0].setCustomValidity(
+    hasPaper && !hasRole ? "Select at least one author role for your abstract." : ""
+  );
+  return !hasPaper || hasRole;
 }
 
 function resolveCountryCode(value) {
@@ -431,8 +459,16 @@ function renderRegistrationSummary(registration) {
   elements.summaryAffiliation.textContent = String(registration?.affiliation ?? "");
   elements.summaryCountry.textContent = String(registration?.country ?? "");
   elements.summaryStudent.textContent = registration?.isStudent === true ? "Yes" : "No";
-  elements.summaryPresenter.textContent = registration?.isPresenter === true ? "Yes" : "No";
-  elements.summaryPaperItem.hidden = registration?.isPresenter !== true;
+  const hasPaper = registration?.hasPaper === true;
+  elements.summaryHasPaper.textContent = hasPaper ? "Submitted abstract registered" : "No abstract";
+  const roles = [
+    registration?.isPresenter === true ? "Presenting Author" : null,
+    registration?.isCoAuthor === true ? "Co-author" : null,
+    registration?.isCorrespondingAuthor === true ? "Corresponding Author" : null
+  ].filter(Boolean);
+  elements.summaryPaperRolesItem.hidden = !hasPaper;
+  elements.summaryPaperRoles.textContent = roles.join(", ");
+  elements.summaryPaperItem.hidden = !hasPaper;
   elements.summaryPaperTitle.textContent = String(registration?.paperTitle ?? "");
   elements.summaryInvitationLetter.textContent = registration?.requiresInvitationLetter === true
     ? "Required"
