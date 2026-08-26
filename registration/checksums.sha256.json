@@ -9,7 +9,7 @@
   },
   {
     "path": "assets/styles.css",
-    "sha256": "ca0fa1a865ff34880ac8fb79e5085c0d377f67869670e61565f738d79ad682e3"
+    "sha256": "1a3f7ebffcc4aa103531652f9cf14b507a15838d9abee7c27d2b6a29659b292d"
   },
   {
     "path": "assets/validation.js",
@@ -17,10 +17,10 @@
   },
   {
     "path": "config.runtime.json",
-    "sha256": "d461e1164587760515926387ba80fc5390212b2571fdcae4a67084c75b1692e0"
+    "sha256": "f3673976c5634295e50e363326157a7d9fe1117dcdb21d1815e3f29b8aaa9244"
   },
   {
     "path": "index.html",
-    "sha256": "96b5ab48f44905d0881114b55f2707d8ad7c050c5fd5c4f59f516e86cd114cf7"
+    "sha256": "0db92f987323f3392633388fa288e2432f504d258264d9facbc38efcd15a85f6"
   }
 ]
