@@ -6,29 +6,36 @@
     <meta name="robots" content="noindex">
     <meta name="referrer" content="no-referrer">
     <title>Oceanoise Asia 2026 Registration</title>
-    <link rel="stylesheet" href="./assets/styles.css?v=20260825-hero-1">
+    <link rel="stylesheet" href="./assets/styles.css">
   </head>
   <body>
     <main class="oa-registration" aria-labelledby="oa-registration-title">
       <nav class="oa-registration__nav" aria-label="Primary">
         <div class="oa-registration__nav-inner">
-          <a href="../index.html">Home</a>
-          <a href="../program.html">Program</a>
-          <a href="../committees.html">Committees</a>
-          <a href="../venue.html">Venue &amp; Accommodation</a>
+          <a href="https://www.oceanoiseasia2026.com/index.html">Home</a>
+          <a href="https://www.oceanoiseasia2026.com/call-for-papers.html">Call for Papers</a>
+          <a href="https://www.oceanoiseasia2026.com/committees.html">Committees</a>
+          <a href="https://www.oceanoiseasia2026.com/venue.html">Venue &amp; Accommodation</a>
           <span aria-current="page">Registration</span>
         </div>
       </nav>
 
       <header class="oa-registration__hero">
         <div class="oa-registration__hero-inner">
-          <p class="oa-registration__hero-eyebrow">4th Oceanoise Asia</p>
-          <h1 id="oa-registration-title">Registration</h1>
+          <p class="oa-registration__hero-eyebrow">International Symposium</p>
+          <h1 id="oa-registration-title">
+            Oceanoise Asia <span>2026</span>
+          </h1>
+          <p class="oa-registration__hero-section">Registration</p>
           <p class="oa-registration__hero-meta">
             October 11–13, 2026 · ARA Convention Hall, Jeju, Korea
           </p>
         </div>
-        <small class="oa-registration__hero-photo-credit">Photo: ARA Convention Hall · Jeju National University</small>
+        <div class="oa-registration__wave" aria-hidden="true">
+          <svg viewBox="0 0 1440 96" preserveAspectRatio="none">
+            <path d="M0,55 C170,90 310,38 485,58 C650,80 790,42 960,58 C1120,76 1265,43 1440,58 L1440,96 L0,96 Z"></path>
+          </svg>
+        </div>
       </header>
 
       <div class="oa-registration__content">
@@ -104,21 +111,45 @@
 
             <label class="oa-registration__field">
               <span class="oa-registration__field-label">
-                Presenter Status
-                <small>Presenters must select Presenter</small>
+                Are you listed as an author on an abstract submitted to Oceanoise Asia 2026?
+                <small>Select No if you are attending without an abstract</small>
               </span>
-              <select name="isPresenter" required data-presenter-select>
-                <option value="">Select status</option>
-                <option value="true">Presenter</option>
-                <option value="false">Non-presenter</option>
+              <select name="hasPaper" required data-paper-status-select>
+                <option value="">Select an option</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
               </select>
             </label>
 
-            <label class="oa-registration__field oa-registration__field--wide" data-paper-title-field hidden>
-              <span>Abstract Title</span>
-              <input name="paperTitle" maxlength="300" data-paper-title-input disabled>
-              <small>Enter the title of the abstract you submitted. Required for presenters.</small>
-            </label>
+            <fieldset class="oa-registration__paper-details" data-paper-details hidden disabled>
+              <legend>Abstract Information</legend>
+              <div class="oa-registration__paper-details-grid">
+                <label class="oa-registration__field oa-registration__field--wide">
+                  <span>Submitted Abstract Title</span>
+                  <input name="paperTitle" maxlength="300" data-paper-title-input>
+                  <small>Enter the title of the abstract submitted to Oceanoise Asia 2026.</small>
+                </label>
+
+                <div class="oa-registration__paper-roles oa-registration__field--wide">
+                  <span>Author Role(s)</span>
+                  <small>Select all that apply. You may select more than one role.</small>
+                  <div class="oa-registration__paper-role-options">
+                    <label>
+                      <input name="isPresenter" type="checkbox" data-paper-role>
+                      <span>Presenting Author</span>
+                    </label>
+                    <label>
+                      <input name="isCoAuthor" type="checkbox" data-paper-role>
+                      <span>Co-author</span>
+                    </label>
+                    <label>
+                      <input name="isCorrespondingAuthor" type="checkbox" data-paper-role>
+                      <span>Corresponding Author</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
           </div>
 
           <label class="oa-registration__consent oa-registration__invitation-letter">
@@ -186,11 +217,15 @@
               <dd data-summary-student></dd>
             </div>
             <div>
-              <dt>Presenter</dt>
-              <dd data-summary-presenter></dd>
+              <dt>Abstract</dt>
+              <dd data-summary-has-paper></dd>
+            </div>
+            <div data-summary-paper-roles-item hidden>
+              <dt>Author Role(s)</dt>
+              <dd data-summary-paper-roles></dd>
             </div>
             <div data-summary-paper-item hidden>
-              <dt>Abstract Title</dt>
+              <dt>Submitted Abstract Title</dt>
               <dd data-summary-paper-title></dd>
             </div>
             <div>
