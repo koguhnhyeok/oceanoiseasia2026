@@ -378,76 +378,6 @@ body {
   font-size: 12px;
 }
 
-.oa-registration__paper-details {
-  grid-column: 1 / -1;
-  min-width: 0;
-  margin: 0;
-  border: 1px solid #cfdee7;
-  border-radius: 5px;
-  background: #f8fbfc;
-  padding: 18px;
-}
-
-.oa-registration__paper-details legend {
-  color: var(--navy-950);
-  font-size: 14px;
-  font-weight: 750;
-  padding: 0 6px;
-}
-
-.oa-registration__paper-details-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.oa-registration__paper-roles {
-  display: grid;
-  gap: 7px;
-}
-
-.oa-registration__paper-roles > span {
-  color: #263b4c;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.oa-registration__paper-roles > small {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.oa-registration__paper-role-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.oa-registration__paper-role-options label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 42px;
-  border: 1px solid #aebfca;
-  border-radius: 5px;
-  background: #ffffff;
-  padding: 9px 12px;
-  cursor: pointer;
-}
-
-.oa-registration__paper-role-options input {
-  width: 16px;
-  height: 16px;
-  margin: 0;
-  accent-color: var(--ocean-700);
-}
-
-.oa-registration__paper-role-options span {
-  color: #263b4c;
-  font-size: 13px;
-  font-weight: 700;
-}
-
 .oa-registration__field input,
 .oa-registration__field select {
   width: 100%;
@@ -772,7 +702,6 @@ body {
   }
 
   .oa-registration__grid,
-  .oa-registration__paper-details-grid,
   .oa-registration__summary {
     grid-template-columns: 1fr;
   }
