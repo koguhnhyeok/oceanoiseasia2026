@@ -13,7 +13,7 @@
   },
   {
     "path": "assets/styles.css",
-    "sha256": "0f2fecf5619d9f7380e0fd690d398686eb6d83f934a3e64bdfed5954d30c2c84"
+    "sha256": "89ac98b08cddf1b4dfbd39a5b53b5c2f783ec3796dc60ffec54288281fe0c3bf"
   },
   {
     "path": "assets/validation.js",
@@ -25,6 +25,6 @@
   },
   {
     "path": "index.html",
-    "sha256": "268853081dd2f738bb4a9d2a40a6e1e815dd856ea607ba3b86a082bdd86a081d"
+    "sha256": "dbce97f228b5dd9562b7b1dff6e6a56c1c5220f1949993230abb121262fc2c4d"
   }
 ]
