@@ -119,7 +119,7 @@ header.page-hero .header-inner {
 header.home-hero .header-inner {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(230px, 300px);
-  align-items: end;
+  align-items: stretch;
   gap: 48px;
   max-width: 880px;
 }
@@ -144,7 +144,8 @@ header.page-hero .meta {
   color: rgba(255,255,255,.75);
 }
 .home-hero-dates {
-  padding-bottom: 2px;
+  display: flex;
+  flex-direction: column;
   color: #fff;
   text-align: right;
   text-shadow: 0 1px 12px rgba(4, 20, 38, .28);
@@ -162,7 +163,13 @@ header.page-hero .meta {
   text-transform: uppercase;
 }
 .home-hero-dates__title:hover { border-bottom-color: #fff; }
-.home-hero-dates dl { display: grid; gap: 12px; }
+.home-hero-dates dl {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
 .home-hero-dates dl > div { display: grid; gap: 1px; }
 .home-hero-dates dt {
   color: rgba(255,255,255,.72);
