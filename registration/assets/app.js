@@ -37,6 +37,10 @@ const elements = {
   summaryPaperItem: document.querySelector("[data-summary-paper-item]"),
   summaryPaperTitle: document.querySelector("[data-summary-paper-title]"),
   summaryInvitationLetter: document.querySelector("[data-summary-invitation-letter]"),
+  emailNextStep: document.querySelector("[data-email-next-step]"),
+  emailNextStepTitle: document.querySelector("[data-email-next-step-title]"),
+  verificationEmail: document.querySelector("[data-verification-email]"),
+  openInbox: document.querySelector("[data-open-inbox]"),
   supportNote: document.querySelector("[data-support-note]"),
   turnstileContainer: document.querySelector("[data-turnstile-container]"),
   turnstileWidget: document.querySelector("[data-turnstile-widget]"),
@@ -177,11 +181,12 @@ function renderRegistrationResult(result, submitted) {
       : result.email?.deliveryMode === "preview_only"
         ? "Your information was saved. Use the verification link in the email preview below."
         : `Your information was saved. A verification email is being processed for ${submitted.emailNormalized}.`;
-  showStatus(
-    "success",
-    "Check your email.",
-    emailMessage
-  );
+  elements.form.hidden = true;
+  elements.pageTitle.textContent = "One more step: verify your email";
+  elements.pageIntroduction.textContent =
+    "Your information has been submitted, but your registration is not complete yet.";
+  showStatus("success", "Verification email sent.", emailMessage);
+  showEmailNextStep(submitted.emailNormalized, result.email);
   renderRegistrationSummary({
     name: submitted.name,
     email: submitted.emailNormalized,
@@ -215,6 +220,7 @@ function renderEmailPreview(email) {
 }
 
 function resetForm() {
+  elements.form.hidden = false;
   elements.form.reset();
   syncPresenterFields();
   elements.countryInput.setCustomValidity("");
@@ -224,8 +230,44 @@ function resetForm() {
   elements.supportNote.hidden = true;
   elements.emailPreview.hidden = true;
   elements.verificationPanel.hidden = true;
+  elements.emailNextStep.hidden = true;
   resetTurnstileChallenge();
   showStatus("neutral", "Ready for another registration.", "Enter the participant information below.");
+}
+
+function showEmailNextStep(email, delivery) {
+  if (delivery?.deliveryStatus === "failed") {
+    elements.emailNextStep.hidden = true;
+    return;
+  }
+  elements.verificationEmail.textContent = email;
+  const inbox = inboxLinkForEmail(email);
+  elements.openInbox.hidden = inbox === null;
+  if (inbox) {
+    elements.openInbox.href = inbox.href;
+    elements.openInbox.textContent = inbox.label;
+  }
+  elements.emailNextStep.hidden = false;
+  elements.emailNextStepTitle.focus({ preventScroll: true });
+  elements.emailNextStep.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function inboxLinkForEmail(email) {
+  const domain = String(email ?? "").split("@").at(-1)?.toLowerCase();
+  const providers = {
+    "gmail.com": { href: "https://mail.google.com/", label: "Open Gmail" },
+    "googlemail.com": { href: "https://mail.google.com/", label: "Open Gmail" },
+    "outlook.com": { href: "https://outlook.live.com/mail/", label: "Open Outlook" },
+    "hotmail.com": { href: "https://outlook.live.com/mail/", label: "Open Outlook" },
+    "live.com": { href: "https://outlook.live.com/mail/", label: "Open Outlook" },
+    "yahoo.com": { href: "https://mail.yahoo.com/", label: "Open Yahoo Mail" },
+    "icloud.com": { href: "https://www.icloud.com/mail/", label: "Open iCloud Mail" },
+    "me.com": { href: "https://www.icloud.com/mail/", label: "Open iCloud Mail" },
+    "naver.com": { href: "https://mail.naver.com/", label: "Open Naver Mail" },
+    "daum.net": { href: "https://mail.daum.net/", label: "Open Daum Mail" },
+    "hanmail.net": { href: "https://mail.daum.net/", label: "Open Daum Mail" }
+  };
+  return providers[domain] ?? null;
 }
 
 function getValidationOptions(config) {
@@ -362,21 +404,22 @@ async function showVerificationRoute(config, verificationRequest) {
   elements.summary.hidden = true;
   elements.supportNote.hidden = true;
   elements.verificationPanel.hidden = false;
-  elements.pageTitle.textContent = "Verify your email";
-  elements.pageIntroduction.textContent = "Continue the registration you submitted on the official Oceanoise Asia 2026 website.";
-  elements.verificationButton.addEventListener("click", handleEmailVerification, { once: true });
+  elements.verificationButton.hidden = true;
+  elements.pageTitle.textContent = "Completing your registration";
+  elements.pageIntroduction.textContent = "Your email is being verified automatically. Please wait.";
   showStatus(
     "neutral",
-    "Ready to complete registration.",
-    "Select Complete Registration above to verify your email address and finish the registration."
+    "Verifying your email.",
+    "Please keep this page open while we complete your registration."
   );
+  await handleEmailVerification();
 }
 
 async function handleEmailVerification() {
   if (state.verifying || !state.verificationToken) return;
   state.verifying = true;
+  elements.verificationButton.hidden = true;
   elements.verificationButton.disabled = true;
-  elements.verificationButton.textContent = "Completing...";
   showStatus("neutral", "Confirming registration.", "Please wait.");
   try {
     const result = await postJson(
@@ -418,7 +461,8 @@ async function handleEmailVerification() {
         : error.publicMessage ?? "The verification link is invalid or expired."
     );
     elements.verificationButton.disabled = false;
-    elements.verificationButton.textContent = "Complete Registration";
+    elements.verificationButton.hidden = false;
+    elements.verificationButton.textContent = "Try Again";
     elements.verificationButton.addEventListener("click", handleEmailVerification, { once: true });
   } finally {
     state.verifying = false;

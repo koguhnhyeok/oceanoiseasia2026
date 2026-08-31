@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex">
     <meta name="referrer" content="no-referrer">
     <title>Oceanoise Asia 2026 Registration</title>
-    <link rel="stylesheet" href="./assets/styles.css?v=20260826-hero-2">
+    <link rel="stylesheet" href="./assets/styles.css?v=20260831-email-verification">
   </head>
   <body>
     <main class="oa-registration" aria-labelledby="oa-registration-title">
@@ -152,15 +152,34 @@
           </div>
         </form>
 
+        <section class="oa-registration__email-next-step" data-email-next-step hidden>
+          <p class="oa-registration__step-label">Registration submitted · One step remaining</p>
+          <h2 tabindex="-1" data-email-next-step-title>Open your email to complete registration</h2>
+          <p>
+            We sent a verification message to <strong data-verification-email></strong>.
+            Your registration is <strong>not confirmed</strong> until you open that email and complete verification.
+          </p>
+          <ol>
+            <li>Open your inbox and find the Oceanoise Asia 2026 verification email.</li>
+            <li>Select <strong>Verify Email &amp; Complete Registration</strong>. The page that opens will complete your registration automatically.</li>
+          </ol>
+          <div class="oa-registration__email-actions">
+            <a class="oa-registration__button" data-open-inbox target="_blank" rel="noopener noreferrer" hidden>Open email inbox</a>
+          </div>
+          <p class="oa-registration__email-help">
+            Cannot find it? Check your spam or junk folder and allow a few minutes for delivery.
+          </p>
+        </section>
+
         <section class="oa-registration__verification" data-verification-panel hidden>
           <p>
-            This page will verify your email address and complete your Oceanoise Asia 2026 registration.
+            Your email address is being verified and your Oceanoise Asia 2026 registration is being completed automatically.
           </p>
           <p class="oa-registration__verification-note">
-            We will not ask for your password or payment information on this page.
+            Please keep this page open. We will not ask for your password or payment information.
           </p>
-          <button class="oa-registration__button" type="button" data-verification-button>
-            Complete Registration
+          <button class="oa-registration__button" type="button" data-verification-button hidden>
+            Try Again
           </button>
         </section>
 
@@ -221,6 +240,6 @@
       </div>
     </main>
 
-    <script type="module" src="./assets/app.js"></script>
+    <script type="module" src="./assets/app.js?v=20260831-auto-verify"></script>
   </body>
 </html>
