@@ -1,11 +1,11 @@
 [
   {
     "path": "assets/app.js",
-    "sha256": "3d4abc558c6813389c25bb8a8dfbe4c2bd8ead2c0893e8edb2b1dd209f87d8e8"
+    "sha256": "4dec88c902bc249bab09d69e8b41e3b00e85740af3a8dde6368f2a491f01d1be"
   },
   {
     "path": "assets/countries.js",
-    "sha256": "2697592002e355444f0bbdab4dde527451da3c41e1c15669c3fcae658339bee5"
+    "sha256": "70a20a345b38c5dc4d76422ada3f3e3faad070e98046572b8c45fd0453ccb790"
   },
   {
     "path": "assets/jeju-campus-aerial.jpg",
@@ -13,18 +13,18 @@
   },
   {
     "path": "assets/styles.css",
-    "sha256": "89ac98b08cddf1b4dfbd39a5b53b5c2f783ec3796dc60ffec54288281fe0c3bf"
+    "sha256": "d7c83332d865bef12f3cdfb92e975d029c741db79824f0f179b2e85a432b6bb6"
   },
   {
     "path": "assets/validation.js",
-    "sha256": "bceb0e88e5a9a1f831b55f07746221132777b1d7ddf530bf91d43f9a7bc0fa5f"
+    "sha256": "17e33235381e37c30cecff0e15588408ae6fd4d6210be622078968a2948fed99"
   },
   {
     "path": "config.runtime.json",
-    "sha256": "d461e1164587760515926387ba80fc5390212b2571fdcae4a67084c75b1692e0"
+    "sha256": "f3673976c5634295e50e363326157a7d9fe1117dcdb21d1815e3f29b8aaa9244"
   },
   {
     "path": "index.html",
-    "sha256": "dbce97f228b5dd9562b7b1dff6e6a56c1c5220f1949993230abb121262fc2c4d"
+    "sha256": "b5757a4557b8a7403f76123069a85eb42f1e3cd02dbab94f6ac5ea04f45024b9"
   }
 ]
