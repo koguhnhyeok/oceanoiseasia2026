@@ -19,11 +19,7 @@ body {
   color: var(--text);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, #a8caE0 0%, transparent 60%),
-    radial-gradient(ellipse 70% 50% at 50% 100%, #c4dceb 0%, transparent 55%),
-    linear-gradient(180deg, #bfd9e8 0%, #d6e6f0 25%, #e3eef5 55%, #ecf3f8 100%);
-  background-attachment: fixed;
+  background: #fff;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
@@ -400,6 +396,55 @@ main > .wrap > .content { max-width: 880px; margin: 0 auto; }
 }
 
 /* ── News ── */
+.sponsors-strip {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr) 104px;
+  align-items: center;
+  min-height: 92px;
+  margin: 0 0 44px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+  box-shadow: 0 0 0 100vmax #fff;
+  clip-path: inset(0 -100vmax);
+}
+.sponsors-strip::after { content: ''; }
+.sponsors-strip h2 {
+  color: var(--ink);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.sponsor-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(28px, 5vw, 58px);
+  min-width: 0;
+}
+.sponsor-logo-frame {
+  position: relative;
+  flex: 0 1 240px;
+  width: min(240px, 34vw);
+  height: 64px;
+  overflow: hidden;
+}
+.sponsor-logo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.sponsor-logo-frame--lucky img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 138%;
+  max-width: none;
+  height: auto;
+  transform: translate(-50%, -51%);
+}
+
 .news.section {
   max-width: none;
   margin: 0;
@@ -1173,6 +1218,25 @@ footer a:hover { text-decoration: underline; }
   .news-item {
     grid-template-columns: 105px minmax(0, 1fr);
     gap: 7px 13px;
+  }
+  .sponsors-strip {
+    position: relative;
+    display: block;
+    min-height: 100px;
+    margin-bottom: 36px;
+    padding: 27px 0 9px;
+  }
+  .sponsors-strip h2 {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    font-size: .6rem;
+  }
+  .sponsor-logos { gap: 14px; }
+  .sponsor-logo-frame {
+    flex-basis: 145px;
+    width: min(145px, 42vw);
+    height: 58px;
   }
   .news-link { grid-column: 2; }
   .content .doc-section h2 { font-size: 1.05rem; }
