@@ -435,6 +435,17 @@ main > .wrap > .content { max-width: 880px; margin: 0 auto; }
   height: 100%;
   object-fit: contain;
 }
+.sponsor-logo-link {
+  display: block;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: opacity .15s ease;
+}
+.sponsor-logo-link:hover { opacity: .82; }
+.sponsor-logo-link:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 4px;
+}
 .sponsor-logo-frame--lucky img {
   position: absolute;
   top: 50%;
