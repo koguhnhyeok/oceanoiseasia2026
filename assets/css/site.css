@@ -1243,10 +1243,10 @@ footer a:hover { text-decoration: underline; }
     left: 0;
     font-size: .6rem;
   }
-  .sponsor-logos { gap: 14px; }
+  .sponsor-logos { gap: 8px; }
   .sponsor-logo-frame {
     flex-basis: 145px;
-    width: min(145px, 42vw);
+    width: min(145px, 30vw);
     height: 58px;
   }
   .news-link { grid-column: 2; }
