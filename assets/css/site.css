@@ -1045,7 +1045,7 @@ tr.group:first-child td { padding-top: 6px; }
   border-bottom-color: #dce5eb;
 }
 .program-table tr:last-child th,
-.program-table tr:last-child td { border-bottom: 0; }
+.program-table tr:last-child td { border-bottom: 1px solid #b8c9d5; }
 .program-table th {
   width: 178px;
   color: #617789;
@@ -1083,6 +1083,10 @@ tr.group:first-child td { padding-top: 6px; }
 .program-table__discussion td {
   color: #526b7d;
   font-size: .9rem;
+  font-weight: 550;
+}
+.session-kind {
+  color: #60798b;
   font-weight: 550;
 }
 .session-number {
