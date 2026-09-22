@@ -1,10 +1,8 @@
 /* Program-only styles: the shared site header, navigation and footer stay consistent. */
 .program-page { padding: 42px 0 64px; }
 .program-page [hidden] { display: none !important; }
-.program-intro { display: flex; align-items: center; justify-content: space-between; gap: 28px; margin-bottom: 32px; }
+.program-intro { display: flex; justify-content: flex-end; margin-bottom: 8px; }
 .agenda-kicker { color: #356b87; font-size: .65rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
-.program-intro h2 { margin: 5px 0 7px; color: var(--ink); font-family: Georgia, 'Times New Roman', serif; font-size: 1.8rem; line-height: 1.25; font-weight: 400; letter-spacing: -.025em; }
-.program-intro p:last-child { color: #627385; font-size: .85rem; }
 .schedule-link { flex-shrink: 0; font-size: .75rem; text-decoration: none; border-bottom: 1px solid #b7c9d4; padding: 7px 0; color: var(--ink); }
 .schedule-link span { padding-left: 10px; color: var(--teal); }
 .day-selector { display: flex; border-bottom: 1px solid #c8d6df; gap: 10px; }
@@ -57,7 +55,6 @@
 .talk h4 { color: #182e43; font-size: .9rem; font-weight: 550; line-height: 1.65; }
 .talk-speaker { color: var(--teal); font-size: .8rem; font-weight: 600; margin-top: 8px; }
 .talk-affiliation { color: #637687; font-size: .74rem; line-height: 1.6; margin-top: 2px; }
-.program-footnote { color: #64788b; margin-top: 28px; font-size: .7rem; }
 .program-empty { text-align: center; padding: 60px 10px; }
 .program-empty h2 { font-size: 1.1rem; color: var(--ink); }
 .program-empty p { font-size: .85rem; color: #637687; margin: 10px 0; }
@@ -67,9 +64,6 @@
 .program-skip:focus { top: 8px; }
 @media (max-width: 760px) {
   .program-page { padding-top: 28px; }
-  .program-intro { align-items: flex-start; flex-direction: column; gap: 13px; margin-bottom: 21px; }
-  .program-intro h2 { font-size: 1.5rem; }
-  .program-intro p:last-child { max-width: 36ch; font-size: .8rem; }
   .day-selector { gap: 0; }
   .day-selector button { flex: 1; padding: 13px 12px; font-size: .75rem; }
   .day-selector button:first-child { padding-left: 0; padding-right: 12px; }
