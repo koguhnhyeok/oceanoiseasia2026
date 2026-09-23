@@ -76,6 +76,7 @@
             <label class="oa-registration__field">
               <span>Email</span>
               <input name="email" type="email" autocomplete="email" maxlength="254" required>
+              <small>A company contact may use the same email for different participants. Submit and verify each participant separately.</small>
             </label>
 
             <label class="oa-registration__field oa-registration__field--wide">
@@ -146,11 +147,12 @@
             <button class="oa-registration__button" type="submit" data-submit-button>
               Submit Registration
             </button>
-            <button class="oa-registration__button oa-registration__button--secondary" type="button" data-reset-button hidden>
-              New Registration
-            </button>
           </div>
         </form>
+
+        <button class="oa-registration__button oa-registration__button--secondary" type="button" data-reset-button hidden>
+          Register Another Participant
+        </button>
 
         <section class="oa-registration__email-next-step" data-email-next-step hidden>
           <p class="oa-registration__step-label">Registration submitted · One step remaining</p>
@@ -240,6 +242,6 @@
       </div>
     </main>
 
-    <script type="module" src="./assets/app.js?v=20260831-auto-verify"></script>
+    <script type="module" src="./assets/app.js?v=20260923-shared-email"></script>
   </body>
 </html>

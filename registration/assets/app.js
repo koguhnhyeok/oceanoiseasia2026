@@ -220,6 +220,9 @@ function renderEmailPreview(email) {
 }
 
 function resetForm() {
+  state.verificationToken = "";
+  elements.pageTitle.textContent = "Oceanoise Asia 2026 Registration";
+  elements.pageIntroduction.textContent = "Enter each participant's details and verify each registration separately. A company contact may use the same email address.";
   elements.form.hidden = false;
   elements.form.reset();
   syncPresenterFields();
@@ -449,6 +452,7 @@ async function handleEmailVerification() {
       + "from the email address used for this registration.";
     elements.supportNote.hidden = false;
     renderEmailPreview(result.email);
+    elements.resetButton.hidden = false;
   } catch (error) {
     const confirmationTimedOut = error?.name === "AbortError";
     showStatus(
@@ -537,7 +541,7 @@ function buildPublicErrorMessage(responseBody) {
     return "The registration status link is invalid or expired.";
   }
   if (errorCode === "REGISTRATION_ALREADY_EXISTS") {
-    return "This email address is already registered for Oceanoise Asia 2026. Contact the organizing committee if you need to update your information.";
+    return "A participant with this name and email address is already registered for Oceanoise Asia 2026. For corrections or two participants with the same name, contact the organizing committee.";
   }
   if (errorCode === "EMAIL_VERIFICATION_EXPIRED") {
     return `This verification link has expired. Contact ${state.config?.supportEmail ?? "the organizing committee"} for assistance.`;
