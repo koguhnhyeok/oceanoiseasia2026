@@ -5,7 +5,7 @@
   },
   {
     "path": "assets/countries.js",
-    "sha256": "2697592002e355444f0bbdab4dde527451da3c41e1c15669c3fcae658339bee5"
+    "sha256": "70a20a345b38c5dc4d76422ada3f3e3faad070e98046572b8c45fd0453ccb790"
   },
   {
     "path": "assets/jeju-campus-aerial.jpg",
@@ -13,15 +13,15 @@
   },
   {
     "path": "assets/styles.css",
-    "sha256": "88a3501c423220a440f23ab7f66f8203888210995892305877834366a509629e"
+    "sha256": "5d9bc1fe3d045d3a1b6fe426bff2c198962ae5d2fea2979fcdcba06bdc1183e2"
   },
   {
     "path": "assets/validation.js",
-    "sha256": "bceb0e88e5a9a1f831b55f07746221132777b1d7ddf530bf91d43f9a7bc0fa5f"
+    "sha256": "17e33235381e37c30cecff0e15588408ae6fd4d6210be622078968a2948fed99"
   },
   {
     "path": "config.runtime.json",
-    "sha256": "d461e1164587760515926387ba80fc5390212b2571fdcae4a67084c75b1692e0"
+    "sha256": "f3673976c5634295e50e363326157a7d9fe1117dcdb21d1815e3f29b8aaa9244"
   },
   {
     "path": "index.html",
