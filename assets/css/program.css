@@ -96,3 +96,7 @@
   .agenda-session > summary { break-after: avoid; }
   .talk { break-inside: avoid; }
 }
+
+.presentation-formats { margin: 12px 0 22px; padding: 14px 18px; border-left: 3px solid var(--teal); background: #f0f6f9; color: #456074; font-size: .8rem; line-height: 1.65; }
+.presentation-formats p + p { margin-top: 7px; }
+.session-guidance { padding: 14px 0; color: #456074; font-size: .8rem; line-height: 1.65; border-bottom: 1px solid #e0e8ee; }
