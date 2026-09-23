@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <title>Oceanoise Asia 2026</title>
+  <desc>October 11–13, 2026. ARA Convention Hall, Jeju, Korea. International Symposium on Underwater Noise in Asia.</desc>
+  <defs>
+    <linearGradient id="ocean" x2="1" y2="1">
+      <stop stop-color="#0a2240"/>
+      <stop offset="1" stop-color="#105477"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ocean)"/>
+  <g fill="none" stroke="#5fcae8" stroke-width="2" opacity=".16">
+    <circle cx="1160" cy="280" r="190"/>
+    <circle cx="1160" cy="280" r="240"/>
+    <circle cx="1160" cy="280" r="290"/>
+    <circle cx="1160" cy="280" r="340"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="84" y="90" font-size="19" letter-spacing="4" fill="#b9dce9">INTERNATIONAL SYMPOSIUM</text>
+    <text x="80" y="204" font-size="84" font-weight="700" letter-spacing="-2" fill="#ffffff">Oceanoise Asia</text>
+    <text x="80" y="305" font-size="104" font-weight="700" letter-spacing="-2" fill="#5fcae8">2026</text>
+    <text x="84" y="358" font-size="29" fill="#cde5ef">Underwater Noise in Asia</text>
+    <path d="M84 395 H164" stroke="#5fcae8" stroke-width="4"/>
+    <text x="82" y="454" font-size="40" font-weight="700" fill="#ffffff">October 11–13, 2026</text>
+    <text x="84" y="502" font-size="29" fill="#e2f1f6">ARA Convention Hall · Jeju, Korea</text>
+  </g>
+  <path d="M0 578 C230 528 385 645 650 580 S1000 528 1200 578 V630 H0Z" fill="#217da1" opacity=".4"/>
+  <path d="M0 610 C200 548 420 653 680 610 S1020 560 1200 605 V630 H0Z" fill="#5fcae8" opacity=".2"/>
+</svg>
