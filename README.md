@@ -23,7 +23,7 @@ This repository hosts the official website for Oceanoise Asia 2026.
 - **Call for Papers** — `call-for-papers.html` (themes, formatting guidelines, downloadable template, submitter's declaration)
 - **Committees** — `committees.html` (chair, secretary, international + local committees)
 - **Venue & Accommodation** — `venue.html` (venue, airport transit, campus directions, map, and accommodation information)
-- **Registration** — `registration/` (participant registration, email verification, presenter and visa-support information)
+- **Registration** — `registration/` (online registration closed; on-site registration and payment information; existing email verification links remain supported)
 - Contact — in the footer of every page
 
 ## Submission

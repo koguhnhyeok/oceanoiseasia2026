@@ -62,19 +62,22 @@ init().catch(() => {
 });
 
 async function init() {
+  const verificationRequest = readEmailVerificationRequest();
+  const statusRequest = readStatusRequest();
+  // The closed registration page only needs the API for existing email links.
+  if (!elements.form && !verificationRequest && !statusRequest) return;
   const config = await loadConfig();
   state.config = config;
   renderConfig(config);
-  const verificationRequest = readEmailVerificationRequest();
   if (verificationRequest) {
     await showVerificationRoute(config, verificationRequest);
     return;
   }
-  const statusRequest = readStatusRequest();
   if (statusRequest) {
     await showStatusRoute(config, statusRequest);
     return;
   }
+  if (!elements.form) return;
   elements.form.addEventListener("submit", handleSubmit);
   elements.resetButton.addEventListener("click", resetForm);
   elements.presenterSelect.addEventListener("change", syncPresenterFields);
@@ -99,6 +102,7 @@ function renderConfig(config) {
   config.countryOptions = config.useAllCountries
     ? buildCountryOptions()
     : config.countryOptions;
+  if (!elements.form) return;
   fillCountryOptions(config.countryOptions);
   updateSubmitButton();
 }
@@ -160,7 +164,7 @@ async function handleSubmit(event) {
       ...validation.value,
       countryName: elements.countryInput.value.trim()
     });
-    elements.resetButton.hidden = false;
+    if (elements.resetButton) elements.resetButton.hidden = false;
   } catch (error) {
     showStatus(
       "error",
@@ -181,7 +185,7 @@ function renderRegistrationResult(result, submitted) {
       : result.email?.deliveryMode === "preview_only"
         ? "Your information was saved. Use the verification link in the email preview below."
         : `Your information was saved. A verification email is being processed for ${submitted.emailNormalized}.`;
-  elements.form.hidden = true;
+  if (elements.form) elements.form.hidden = true;
   elements.pageTitle.textContent = "One more step: verify your email";
   elements.pageIntroduction.textContent =
     "Your information has been submitted, but your registration is not complete yet.";
@@ -393,7 +397,7 @@ async function handleEmailStatusLinkClick(event) {
 }
 
 async function showStatusRoute(config, statusRequest) {
-  elements.form.hidden = true;
+  if (elements.form) elements.form.hidden = true;
   elements.emailPreview.hidden = true;
   elements.pageTitle.textContent = "Oceanoise Asia 2026 Registration Status";
   elements.pageIntroduction.textContent = "View the current registration status from this secure link.";
@@ -402,7 +406,7 @@ async function showStatusRoute(config, statusRequest) {
 
 async function showVerificationRoute(config, verificationRequest) {
   state.verificationToken = verificationRequest.token;
-  elements.form.hidden = true;
+  if (elements.form) elements.form.hidden = true;
   elements.emailPreview.hidden = true;
   elements.summary.hidden = true;
   elements.supportNote.hidden = true;
@@ -452,7 +456,7 @@ async function handleEmailVerification() {
       + "from the email address used for this registration.";
     elements.supportNote.hidden = false;
     renderEmailPreview(result.email);
-    elements.resetButton.hidden = false;
+    if (elements.resetButton) elements.resetButton.hidden = false;
   } catch (error) {
     const confirmationTimedOut = error?.name === "AbortError";
     showStatus(
