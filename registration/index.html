@@ -38,9 +38,9 @@
       <section class="oa-registration__shell" aria-labelledby="oa-registration-form-title">
         <header class="oa-registration__header">
           <div>
-            <h2 id="oa-registration-form-title" data-page-title>Participant Registration</h2>
+            <h2 id="oa-registration-form-title" data-page-title>Online Registration Closed</h2>
             <p class="oa-registration__introduction" data-page-introduction>
-              Enter the participant information below to register for Oceanoise Asia 2026.
+              Online registration closed on 30 September 2026. You can still register on site at the conference.
             </p>
           </div>
         </header>
@@ -56,120 +56,14 @@
           </p>
           <div class="oa-registration__guidance">
             <p>
-              <strong>Email confirmation</strong>
-              <span>Submit the form and verify your email. Your registration details will be sent after confirmation.</span>
+              <strong>On-site registration</strong>
+              <span>Please visit the registration desk at ARA Convention Hall, Jeju National University, during the conference.</span>
             </p>
             <p>
-              <strong>Visa support</strong>
-              <span>Invitation letters are optional and available upon request. The Organizing Committee will send requested letters by email.</span>
+              <strong>Registration enquiries</strong>
+              <span>For questions about registration, please contact <a href="mailto:oceanoiseasia2026@gmail.com">oceanoiseasia2026@gmail.com</a>.</span>
             </p>
           </div>
-        </section>
-
-        <form class="oa-registration__form" data-registration-form novalidate>
-          <div class="oa-registration__grid">
-            <label class="oa-registration__field">
-              <span>Full Name (as shown in your passport)</span>
-              <input name="name" autocomplete="name" maxlength="100" required>
-            </label>
-
-            <label class="oa-registration__field">
-              <span>Email</span>
-              <input name="email" type="email" autocomplete="email" maxlength="254" required>
-            </label>
-
-            <label class="oa-registration__field oa-registration__field--wide">
-              <span>Affiliation</span>
-              <input name="affiliation" autocomplete="organization" maxlength="200" required>
-            </label>
-
-            <label class="oa-registration__field">
-              <span>Student Status</span>
-              <select name="isStudent" required>
-                <option value="">Select status</option>
-                <option value="true">Student</option>
-                <option value="false">Non-student</option>
-              </select>
-            </label>
-
-            <label class="oa-registration__field">
-              <span>Nationality (as shown in your passport)</span>
-              <input
-                name="countryName"
-                list="oa-registration-country-options"
-                autocomplete="country-name"
-                placeholder="Select nationality"
-                required
-                data-country-input
-              >
-              <datalist id="oa-registration-country-options" data-country-options></datalist>
-            </label>
-
-            <label class="oa-registration__field">
-              <span class="oa-registration__field-label">
-                Presenter Status
-                <small>Presenters must select Presenter</small>
-              </span>
-              <select name="isPresenter" required data-presenter-select>
-                <option value="">Select status</option>
-                <option value="true">Presenter</option>
-                <option value="false">Non-presenter</option>
-              </select>
-            </label>
-
-            <label class="oa-registration__field oa-registration__field--wide" data-paper-title-field hidden>
-              <span>Abstract Title</span>
-              <input name="paperTitle" maxlength="300" data-paper-title-input disabled>
-              <small>Enter the title of the abstract you submitted. Required for presenters.</small>
-            </label>
-          </div>
-
-          <label class="oa-registration__consent oa-registration__invitation-letter">
-            <input name="requiresInvitationLetter" type="checkbox">
-            <span>
-              <strong>Invitation Letter (Optional)</strong>
-              Select this option only if you need an invitation letter for your visa application. The Organizing Committee will send it to the email address provided above.
-            </span>
-          </label>
-
-          <p class="oa-registration__privacy-note">
-            Registration information is used only to process participation, send conference communications,
-            and provide requested visa support. Privacy enquiries may be sent to
-            <a href="mailto:oceanoiseasia2026@gmail.com">oceanoiseasia2026@gmail.com</a>.
-          </p>
-
-          <div class="oa-registration__turnstile" data-turnstile-container hidden>
-            <div data-turnstile-widget></div>
-          </div>
-
-          <div class="oa-registration__actions">
-            <button class="oa-registration__button" type="submit" data-submit-button>
-              Submit Registration
-            </button>
-          </div>
-        </form>
-
-        <button class="oa-registration__button oa-registration__button--secondary" type="button" data-reset-button hidden>
-          Register Another Participant
-        </button>
-
-        <section class="oa-registration__email-next-step" data-email-next-step hidden>
-          <p class="oa-registration__step-label">Registration submitted · One step remaining</p>
-          <h2 tabindex="-1" data-email-next-step-title>Open your email to complete registration</h2>
-          <p>
-            We sent a verification message to <strong data-verification-email></strong>.
-            Your registration is <strong>not confirmed</strong> until you open that email and complete verification.
-          </p>
-          <ol>
-            <li>Open your inbox and find the Oceanoise Asia 2026 verification email.</li>
-            <li>Select <strong>Verify Email &amp; Complete Registration</strong>. The page that opens will complete your registration automatically.</li>
-          </ol>
-          <div class="oa-registration__email-actions">
-            <a class="oa-registration__button" data-open-inbox target="_blank" rel="noopener noreferrer" hidden>Open email inbox</a>
-          </div>
-          <p class="oa-registration__email-help">
-            Cannot find it? Check your spam or junk folder and allow a few minutes for delivery.
-          </p>
         </section>
 
         <section class="oa-registration__verification" data-verification-panel hidden>
