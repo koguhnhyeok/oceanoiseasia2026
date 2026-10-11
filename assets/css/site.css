@@ -1341,3 +1341,12 @@ footer a:hover { text-decoration: underline; }
     flex-direction: column;
   }
 }
+
+/* Abstract book access from the home hero. */
+.home-hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.home-hero-actions .hero-action { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 14px; border: 1px solid rgba(255,255,255,.75); color: #fff; font-size: .78rem; font-weight: 600; text-decoration: none; line-height: 1.5; }
+.home-hero-actions .hero-action:hover { background: rgba(255,255,255,.15); }
+.home-hero-actions .hero-action--download { background: #fff; color: var(--ink); border-color: #fff; }
+.home-hero-actions .hero-action--download:hover { background: #eaf4f7; }
+.home-hero-actions .hero-action:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.home-hero-download-meta { margin-top: 8px; color: rgba(255,255,255,.8); font-size: .7rem; }
