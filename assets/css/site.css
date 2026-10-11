@@ -507,7 +507,9 @@ main > .wrap > .content { max-width: 880px; margin: 0 auto; }
   font-weight: 750;
   letter-spacing: .05em;
   text-transform: uppercase;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  min-width: 0;
 }
 .news-item a:hover,
 .news-item a:focus-visible { text-decoration: underline; }
@@ -1252,8 +1254,9 @@ footer a:hover { text-decoration: underline; }
   .btn { flex: 1 1 auto; justify-content: center; }
   .committee-grid { grid-template-columns: 1fr; }
   .news-item {
-    grid-template-columns: 105px minmax(0, 1fr);
-    gap: 7px 13px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    padding: 16px 0;
   }
   .sponsors-strip {
     position: relative;
@@ -1273,7 +1276,7 @@ footer a:hover { text-decoration: underline; }
     max-width: 200px;
     height: 58px;
   }
-  .news-link { grid-column: 2; }
+  .news-link { grid-column: 1; justify-self: start; max-width: 100%; }
   .content .doc-section h2 { font-size: 1.05rem; }
   .venue-page { padding-top: 36px; }
   .venue-section { margin-top: 52px; }
