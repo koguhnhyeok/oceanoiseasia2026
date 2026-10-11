@@ -447,6 +447,16 @@ main > .wrap > .content { max-width: 880px; margin: 0 auto; }
   outline: 2px solid var(--teal);
   outline-offset: 4px;
 }
+.sponsor-logo-frame--oceansound { height: 96px; }
+.sponsor-logo-frame--oceansound img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  max-width: none;
+  height: 190%;
+  transform: translate(-50%, -51%);
+}
 .sponsor-logo-frame--lucky img {
   position: absolute;
   top: 50%;
