@@ -3,6 +3,9 @@
 .visit-meta { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line); padding-bottom: 26px; }
 .visit-meta p { font-size: clamp(1rem, 2.5vw, 1.4rem); }
 .visit-meta span { font-size: .85rem; color: var(--muted); white-space: nowrap; }
+.visit-signup { margin-top: 24px; padding: 18px 22px; background: #f1f7fb; border-left: 3px solid var(--teal); font-size: .95rem; }
+.visit-signup strong { color: var(--ink); font-weight: 600; }
+.visit-signup p + p { margin-top: 5px; }
 .visit-route { list-style: none; padding: 0; margin: 38px 0 0; }
 .visit-stop { position: relative; padding: 0 0 38px 96px; min-height: 92px; }
 .visit-stop::before { content: ''; position: absolute; top: 22px; left: 23px; bottom: -22px; width: 2px; background: var(--line); }
@@ -23,7 +26,7 @@
 .visit-destination .visit-number { top: 40%; transform: translateY(-50%); background: var(--teal); border-color: var(--teal); color: #fff; }
 .visit-destination::before { top: 0; bottom: 0; }
 .visit-destination::after { content: ''; position: absolute; top: 40%; left: 23px; width: 73px; height: 1px; background: var(--line); }
-.visit-dropoff { padding-top: 5px; }
+.visit-return-final { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
 .visit-body a:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; }
 .visit-skip { position: absolute; left: 20px; top: -100px; z-index: 100; background: #fff; color: #102e3d; padding: 10px 16px; }
 .visit-skip:focus { top: 6px; }
