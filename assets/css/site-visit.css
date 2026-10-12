@@ -27,10 +27,17 @@
 .visit-destination::before { top: 0; bottom: 0; }
 .visit-destination::after { content: ''; position: absolute; top: 40%; left: 23px; width: 73px; height: 1px; background: var(--line); }
 .visit-return-final { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+.visit-poster { display: flex; align-items: center; gap: 28px; border-top: 1px solid var(--line); padding-top: 28px; }
+.visit-poster-preview { flex: 0 0 132px; border: 1px solid var(--line); }
+.visit-poster p { margin: 9px 0 16px; color: var(--muted); font-size: .9rem; }
+.visit-poster-links { display: flex; flex-wrap: wrap; gap: 10px 24px; }
+.visit-poster-links a { color: var(--teal); text-underline-offset: 4px; font-size: .9rem; }
 .visit-body a:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; }
 .visit-skip { position: absolute; left: 20px; top: -100px; z-index: 100; background: #fff; color: #102e3d; padding: 10px 16px; }
 .visit-skip:focus { top: 6px; }
 @media(max-width: 680px) {
+  .visit-poster { gap: 18px; }
+  .visit-poster-preview { flex-basis: 90px; }
   .visit-shell { width: calc(100% - 36px); padding-top: 38px; }
   .visit-meta { gap: 8px; padding-bottom: 22px; flex-wrap: wrap; }
   .visit-stop { padding-left: 49px; padding-bottom: 28px; }
@@ -46,7 +53,7 @@
   .visit-destination::after { left: 15px; width: 34px; }
 }
 @media print {
-  .site-nav, footer { display: none; }
+  .site-nav, .visit-poster, footer { display: none; }
   .visit-shell { width: 100%; padding: 20px; }
   .visit-stop { break-inside: avoid; }
   .visit-page { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
