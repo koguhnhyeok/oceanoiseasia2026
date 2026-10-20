@@ -481,6 +481,8 @@ main > .wrap > .content { max-width: 880px; margin: 0 auto; }
   padding: 12px 0;
   border-bottom: 1px solid #cbd7df;
 }
+.news-item--message { grid-template-columns: 124px minmax(0, 1fr); align-items: start; }
+.news-message p { margin: 10px 0 0; font-size: .85rem; line-height: 1.8; }
 .news-item time {
   display: inline-block;
   margin-bottom: 0;
